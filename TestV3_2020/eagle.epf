@@ -75,5 +75,5 @@ Type="Control Panel"
 Number=0
 
 [Desktop]
-Screen="1280 800"
+Screen="2560 1024"
 Window="Win_1"
