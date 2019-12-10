@@ -3,7 +3,7 @@
 <eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -798,6 +798,55 @@ LED - BLUE</description>
 </package3d>
 </packages3d>
 </library>
+<library name="SparkFun-Coils" urn="urn:adsk.eagle:library:512">
+<description>&lt;h3&gt;SparkFun Coils&lt;/h3&gt;
+In this library you'll find magnetics.
+
+&lt;p&gt;&lt;b&gt;SparkFun Products:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;Inductors&lt;/li&gt;
+&lt;li&gt;Ferrite Beads&lt;/li&gt;
+&lt;li&gt;Transformers&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;br&gt;
+&lt;p&gt;We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.&lt;/p&gt;</description>
+<packages>
+<package name="0603" urn="urn:adsk.eagle:footprint:37562/1" library_version="1">
+<description>&lt;p&gt;&lt;b&gt;Generic 1608 (0603) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-1.6" y1="0.7" x2="1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="0.7" x2="1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="-0.7" x2="-1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="-1.6" y1="-0.7" x2="-1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="0603" urn="urn:adsk.eagle:package:37574/1" type="box" library_version="1">
+<description>Generic 1608 (0603) package
+0.2mm courtyard excess rounded to nearest 0.05mm.</description>
+<packageinstances>
+<packageinstance name="0603"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1221,6 +1270,21 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="DIO-08575" x="-50.8" y="-13.97" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-50.8" y="-14.605" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
+<element name="FB1" library="SparkFun-Coils" library_urn="urn:adsk.eagle:library:512" package="0603" package3d_urn="urn:adsk.eagle:package:37574/1" value="30Ω/1.8A" x="-50.8" y="-17.78" smashed="yes">
+<attribute name="NAME" x="-50.8" y="-17.018" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="NDUC-07859" x="-50.8" y="-17.78" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-50.8" y="-18.542" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
+<element name="FB2" library="SparkFun-Coils" library_urn="urn:adsk.eagle:library:512" package="0603" package3d_urn="urn:adsk.eagle:package:37574/1" value="30Ω/1.8A" x="-50.8" y="-21.59" smashed="yes">
+<attribute name="NAME" x="-50.8" y="-20.828" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="NDUC-07859" x="-50.8" y="-21.59" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-50.8" y="-22.352" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
+<element name="D4" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV" x="-49.53" y="-26.67" smashed="yes">
+<attribute name="NAME" x="-49.53" y="-25.019" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="DIO-09886" x="-49.53" y="-26.67" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-49.53" y="-28.321" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
 </elements>
 <signals>
 <signal name="N$59">
@@ -1245,7 +1309,9 @@ design rules under a new name.</description>
 <contactref element="R3" pad="2"/>
 <contactref element="R2" pad="2"/>
 <contactref element="SWD" pad="4"/>
-<wire x1="-43.18" y1="-2.667" x2="-46.16" y2="2.33" width="0" layer="19" extent="1-1"/>
+<contactref element="FB1" pad="1"/>
+<wire x1="-43.18" y1="-2.667" x2="-51.65" y2="-17.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-46.16" y1="2.33" x2="-43.18" y2="-2.667" width="0" layer="19" extent="1-1"/>
 <wire x1="-44.66" y1="9.33" x2="-46.16" y2="2.33" width="0" layer="19" extent="1-1"/>
 <wire x1="-37.66" y1="7.83" x2="-44.66" y2="9.33" width="0" layer="19" extent="1-1"/>
 <wire x1="-31.75" y1="29.04" x2="-37.66" y2="7.83" width="0" layer="19" extent="1-1"/>
@@ -1325,6 +1391,8 @@ design rules under a new name.</description>
 <contactref element="R17" pad="2"/>
 <contactref element="SWD" pad="1"/>
 <contactref element="D1" pad="C"/>
+<contactref element="FB2" pad="1"/>
+<wire x1="-49.923" y1="-13.97" x2="-51.65" y2="-21.59" width="0" layer="19" extent="1-1"/>
 <wire x1="-50.8" y1="-2.413" x2="-49.923" y2="-13.97" width="0" layer="19" extent="1-1"/>
 <wire x1="-46.16" y1="2.83" x2="-50.8" y2="-2.413" width="0" layer="19" extent="1-1"/>
 <wire x1="-44.16" y1="9.33" x2="-46.16" y2="2.83" width="0" layer="19" extent="1-1"/>
@@ -1533,11 +1601,15 @@ design rules under a new name.</description>
 <signal name="VCCA">
 <contactref element="C4" pad="1"/>
 <contactref element="UC1" pad="9"/>
+<contactref element="FB1" pad="2"/>
+<wire x1="-40.66" y1="0.83" x2="-49.95" y2="-17.78" width="0" layer="19" extent="1-1"/>
 <wire x1="-31.33" y1="41.91" x2="-40.66" y2="0.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V_USB">
 <contactref element="R8" pad="2"/>
 <contactref element="J3" pad="VBUS"/>
+<contactref element="D4" pad="A"/>
+<wire x1="-17.82" y1="10.49" x2="-51.68" y2="-26.67" width="0" layer="19" extent="1-1"/>
 <wire x1="-48.68" y1="45.72" x2="-17.82" y2="10.49" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
@@ -1577,13 +1649,15 @@ design rules under a new name.</description>
 <contactref element="2C7" pad="1"/>
 <contactref element="U1" pad="2"/>
 <contactref element="R14" pad="2"/>
-<wire x1="25.4" y1="21.17" x2="29.21" y2="24.915" width="0" layer="19" extent="1-1"/>
-<wire x1="22.44" y1="17.78" x2="25.4" y2="21.17" width="0" layer="19" extent="1-1"/>
+<contactref element="D4" pad="C"/>
+<wire x1="-35.14" y1="34.29" x2="-47.38" y2="-26.67" width="0" layer="19" extent="1-1"/>
+<wire x1="-29.21" y1="35.59" x2="-35.14" y2="34.29" width="0" layer="19" extent="1-1"/>
+<wire x1="17.8562" y1="22.225" x2="-29.21" y2="35.59" width="0" layer="19" extent="1-1"/>
+<wire x1="22.44" y1="17.78" x2="17.8562" y2="22.225" width="0" layer="19" extent="1-1"/>
 <wire x1="21.17" y1="15.24" x2="22.44" y2="17.78" width="0" layer="19" extent="1-1"/>
 <wire x1="24.98" y1="15.24" x2="22.44" y2="17.78" width="0" layer="19" extent="1-1"/>
-<wire x1="17.8562" y1="22.225" x2="22.44" y2="17.78" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.21" y1="35.59" x2="17.8562" y2="22.225" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.14" y1="34.29" x2="-29.21" y2="35.59" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="21.17" x2="22.44" y2="17.78" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="24.915" x2="25.4" y2="21.17" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="U2" pad="P6"/>
@@ -1652,6 +1726,8 @@ design rules under a new name.</description>
 <signal name="AGND">
 <contactref element="UC1" pad="8"/>
 <contactref element="C4" pad="2"/>
+<contactref element="FB2" pad="2"/>
+<wire x1="-41.16" y1="0.83" x2="-49.95" y2="-21.59" width="0" layer="19" extent="1-1"/>
 <wire x1="-29.63" y1="41.91" x2="-41.16" y2="0.83" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>

@@ -3746,7 +3746,7 @@ LED</description>
 <part name="R17" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="29.4k"/>
 <part name="C1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1nF"/>
 <part name="C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="47pF"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="LOCK" package3d_urn="urn:adsk.eagle:package:38089/1"/>
+<part name="SWD" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="LOCK" package3d_urn="urn:adsk.eagle:package:38089/1"/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="GND5" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="S1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="3*4-MOMENTARY-SWITCH" device="" package3d_urn="urn:adsk.eagle:package:7403502/1"/>
@@ -3945,7 +3945,7 @@ LED</description>
 <instance part="SUPPLY16" gate="G$1" x="38.1" y="139.7" smashed="yes">
 <attribute name="VALUE" x="38.1" y="142.494" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="J1" gate="G$1" x="27.94" y="91.44" smashed="yes">
+<instance part="SWD" gate="G$1" x="27.94" y="91.44" smashed="yes">
 <attribute name="VALUE" x="22.86" y="84.074" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="22.86" y="99.568" size="1.778" layer="95" font="vector"/>
 </instance>
@@ -4040,7 +4040,7 @@ LED</description>
 <pinref part="P+7" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="4"/>
+<pinref part="SWD" gate="G$1" pin="4"/>
 <wire x1="33.02" y1="96.52" x2="38.1" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
 <wire x1="38.1" y1="99.06" x2="38.1" y2="96.52" width="0.1524" layer="91"/>
@@ -4165,7 +4165,7 @@ LED</description>
 <pinref part="D1" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="1"/>
+<pinref part="SWD" gate="G$1" pin="1"/>
 <wire x1="33.02" y1="88.9" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="88.9" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
@@ -4426,7 +4426,7 @@ LED</description>
 <pinref part="UC1" gate="G$1" pin="PA14/JTCK/SWCLK"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="2"/>
+<pinref part="SWD" gate="G$1" pin="2"/>
 <wire x1="33.02" y1="91.44" x2="43.18" y2="91.44" width="0.1524" layer="91"/>
 <label x="40.64" y="91.44" size="1.778" layer="95"/>
 </segment>
@@ -4438,7 +4438,7 @@ LED</description>
 <pinref part="UC1" gate="G$1" pin="PA13/JTMS/SWDIO"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="3"/>
+<pinref part="SWD" gate="G$1" pin="3"/>
 <wire x1="33.02" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
 <label x="40.64" y="93.98" size="1.778" layer="95"/>
 </segment>
