@@ -3,7 +3,7 @@
 <eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -158,70 +158,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="SparkFun-Aesthetics">
-<description>&lt;h3&gt;SparkFun Aesthetics&lt;/h3&gt;
-This library contiains non-functional items such as logos, build/ordering notes, frame blocks, etc. 
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="FR-A4L">
-<description>&lt;h3&gt;Schematic Frame - A4L - European Format&lt;/h3&gt;
-&lt;p&gt;Standard A4 size frame in Landscape&lt;/p&gt;
-&lt;p&gt;Devices using:
-&lt;ul&gt;&lt;li&gt;FRAME-A4L&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
-<rectangle x1="178.7652" y1="0" x2="179.3748" y2="20.32" layer="94"/>
-<rectangle x1="225.7552" y1="-26.67" x2="226.3648" y2="67.31" layer="94" rot="R90"/>
-<wire x1="225.29" y1="-0.1" x2="225.29" y2="5.08" width="0.1016" layer="94"/>
-<wire x1="225.29" y1="5.08" x2="273.05" y2="5.08" width="0.1016" layer="94"/>
-<wire x1="225.29" y1="5.08" x2="179.07" y2="5.08" width="0.1016" layer="94"/>
-<wire x1="179.07" y1="10.16" x2="225.29" y2="10.16" width="0.1016" layer="94"/>
-<wire x1="225.29" y1="10.16" x2="273.05" y2="10.16" width="0.1016" layer="94"/>
-<wire x1="179.07" y1="15.24" x2="273.05" y2="15.24" width="0.1016" layer="94"/>
-<wire x1="225.29" y1="5.08" x2="225.29" y2="10.16" width="0.1016" layer="94"/>
-<wire x1="179.07" y1="19.05" x2="179.07" y2="20.32" width="0.6096" layer="94"/>
-<wire x1="179.07" y1="20.32" x2="180.34" y2="20.32" width="0.6096" layer="94"/>
-<text x="181.61" y="11.43" size="2.54" layer="94" font="vector">&gt;DRAWING_NAME</text>
-<text x="181.61" y="6.35" size="2.286" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
-<text x="195.58" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
-<text x="181.61" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
-<text x="181.61" y="16.51" size="2.54" layer="94" font="vector">&gt;CNAME</text>
-<text x="226.16" y="1.27" size="2.54" layer="94" font="vector">Rev:</text>
-<text x="226.26" y="6.35" size="2.54" layer="94" font="vector">&gt;DESIGNER</text>
-<text x="234.92" y="1.17" size="2.54" layer="94" font="vector">&gt;CREVISION</text>
-<frame x1="-3.81" y1="-3.81" x2="276.86" y2="182.88" columns="8" rows="5" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="FRAME-A4L" prefix="FRAME">
-<description>&lt;h3&gt;Schematic Frame - A4L - European Format&lt;/h3&gt;
-&lt;p&gt;Standard A4 size frame in Landscape&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="FR-A4L" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name="">
-<attribute name="DESIGNER" value="" constant="no"/>
-<attribute name="REV" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="JH" urn="urn:adsk.eagle:library:6027132">
 <packages>
 <package name="SOT23-6-MP" urn="urn:adsk.eagle:footprint:15213527/2" library_version="70">
@@ -546,6 +482,44 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <text x="-2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="TO-263" urn="urn:adsk.eagle:footprint:9157860/2" library_version="72">
+<smd name="P3" x="11" y="0" dx="2.16" dy="1.07" layer="1"/>
+<smd name="P4" x="11" y="1.7" dx="2.16" dy="1.07" layer="1"/>
+<smd name="P5" x="11" y="3.4" dx="2.16" dy="1.07" layer="1"/>
+<smd name="P2" x="11" y="-1.7" dx="2.16" dy="1.07" layer="1"/>
+<smd name="P1" x="11" y="-3.4" dx="2.16" dy="1.07" layer="1"/>
+<smd name="TAB" x="0" y="0" dx="1.27" dy="0.635" layer="1"/>
+<polygon width="0.127" layer="1">
+<vertex x="-3.17" y="5.4"/>
+<vertex x="-3.17" y="-5.4"/>
+<vertex x="-1.26" y="-5.4"/>
+<vertex x="-1.26" y="-4.2"/>
+<vertex x="3.82" y="-4.2"/>
+<vertex x="3.82" y="4.3"/>
+<vertex x="-1.26" y="4.3"/>
+<vertex x="-1.26" y="5.4"/>
+</polygon>
+<polygon width="0.127" layer="31">
+<vertex x="-3.17" y="5.4"/>
+<vertex x="-3.17" y="-5.4"/>
+<vertex x="-1.26" y="-5.4"/>
+<vertex x="-1.26" y="-4.2"/>
+<vertex x="3.82" y="-4.2"/>
+<vertex x="3.82" y="4.3"/>
+<vertex x="-1.26" y="4.3"/>
+<vertex x="-1.26" y="5.4"/>
+</polygon>
+<polygon width="0.127" layer="29">
+<vertex x="-3.17" y="5.4"/>
+<vertex x="-3.17" y="-5.4"/>
+<vertex x="-1.26" y="-5.4"/>
+<vertex x="-1.26" y="-4.2"/>
+<vertex x="3.82" y="-4.2"/>
+<vertex x="3.82" y="4.3"/>
+<vertex x="-1.26" y="4.3"/>
+<vertex x="-1.26" y="5.4"/>
+</polygon>
+</package>
 </packages>
 <packages3d>
 <package3d name="SOT23-6-MP" urn="urn:adsk.eagle:package:15213528/2" type="box" library_version="70">
@@ -621,6 +595,11 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <packageinstances>
 <packageinstance name="LQFP48"/>
+</packageinstances>
+</package3d>
+<package3d name="TO-263" urn="urn:adsk.eagle:package:9157861/2" type="box" library_version="72">
+<packageinstances>
+<packageinstance name="TO-263"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -763,6 +742,19 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <pin name="VSS_A" x="-15.24" y="-38.1" length="short" direction="pwr" rot="R90"/>
 <text x="45.72" y="38.1" size="1.778" layer="96" rot="R180">&gt;VALUE</text>
 <text x="38.1" y="-38.1" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="LM2587" urn="urn:adsk.eagle:symbol:9157859/2" library_version="72">
+<pin name="COMP" x="-10.16" y="0" visible="pin" length="short"/>
+<pin name="GND" x="-10.16" y="-2.54" visible="pin" length="short" direction="pwr"/>
+<pin name="FDBK" x="10.16" y="-2.54" visible="pin" length="short" direction="in" rot="R180"/>
+<pin name="SW" x="10.16" y="2.54" visible="pin" length="short" direction="out" rot="R180"/>
+<pin name="VIN" x="-10.16" y="2.54" visible="pin" length="short" direction="pwr"/>
+<wire x1="-7.62" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<text x="0" y="-4.318" size="0.762" layer="94" font="vector" ratio="12" align="center">LM2587</text>
+<text x="0" y="6.604" size="1.397" layer="95" font="vector" ratio="12" align="center">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1020,6 +1012,28 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:15744454/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LM2587" urn="urn:adsk.eagle:component:9157862/4" prefix="U" library_version="72">
+<gates>
+<gate name="G$1" symbol="LM2587" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO-263">
+<connects>
+<connect gate="G$1" pin="COMP" pad="P1"/>
+<connect gate="G$1" pin="FDBK" pad="P2"/>
+<connect gate="G$1" pin="GND" pad="P3"/>
+<connect gate="G$1" pin="SW" pad="P4"/>
+<connect gate="G$1" pin="VIN" pad="P5"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:9157861/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3750,6 +3764,67 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Aesthetics" urn="urn:adsk.eagle:library:507">
+<description>&lt;h3&gt;SparkFun Aesthetics&lt;/h3&gt;
+This library contiains non-functional items such as logos, build/ordering notes, frame blocks, etc. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="FR-A4L" urn="urn:adsk.eagle:symbol:37073/1" library_version="1">
+<description>&lt;h3&gt;Schematic Frame - A4L - European Format&lt;/h3&gt;
+&lt;p&gt;Standard A4 size frame in Landscape&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;FRAME-A4L&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<rectangle x1="178.7652" y1="0" x2="179.3748" y2="20.32" layer="94"/>
+<rectangle x1="225.7552" y1="-26.67" x2="226.3648" y2="67.31" layer="94" rot="R90"/>
+<wire x1="225.29" y1="-0.1" x2="225.29" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="225.29" y1="5.08" x2="273.05" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="225.29" y1="5.08" x2="179.07" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="179.07" y1="10.16" x2="225.29" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="225.29" y1="10.16" x2="273.05" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="179.07" y1="15.24" x2="273.05" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="225.29" y1="5.08" x2="225.29" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="179.07" y1="19.05" x2="179.07" y2="20.32" width="0.6096" layer="94"/>
+<wire x1="179.07" y1="20.32" x2="180.34" y2="20.32" width="0.6096" layer="94"/>
+<text x="181.61" y="11.43" size="2.54" layer="94" font="vector">&gt;DRAWING_NAME</text>
+<text x="181.61" y="6.35" size="2.286" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
+<text x="195.58" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
+<text x="181.61" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
+<text x="181.61" y="16.51" size="2.54" layer="94" font="vector">&gt;CNAME</text>
+<text x="226.16" y="1.27" size="2.54" layer="94" font="vector">Rev:</text>
+<text x="226.26" y="6.35" size="2.54" layer="94" font="vector">&gt;DESIGNER</text>
+<text x="234.92" y="1.17" size="2.54" layer="94" font="vector">&gt;CREVISION</text>
+<frame x1="-3.81" y1="-3.81" x2="276.86" y2="182.88" columns="8" rows="5" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FRAME-A4L" urn="urn:adsk.eagle:component:37152/1" prefix="FRAME" library_version="1">
+<description>&lt;h3&gt;Schematic Frame - A4L - European Format&lt;/h3&gt;
+&lt;p&gt;Standard A4 size frame in Landscape&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="FR-A4L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3760,7 +3835,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </class>
 </classes>
 <parts>
-<part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device=""/>
+<part name="FRAME1" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
 <part name="C10" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="47pF"/>
 <part name="C11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="47pF"/>
 <part name="R1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="1k"/>
@@ -3801,12 +3876,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="1k"/>
 <part name="SUPPLY17" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device="" value="GND"/>
 <part name="OSC" library="SparkFun-Clocks" library_urn="urn:adsk.eagle:library:511" deviceset="CRYSTAL" device="SMD-5X3.2-2PAD" package3d_urn="urn:adsk.eagle:package:37520/1" value="8MHz"/>
-<part name="FRAME2" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device=""/>
+<part name="FRAME2" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
 <part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="USB_MINI-B" device="_SMT" package3d_urn="urn:adsk.eagle:package:38244/1"/>
 <part name="U$3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="SUPPLY8" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="V_USB" device=""/>
 <part name="SUPPLY16" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="V_USB" device=""/>
-<part name="FRAME3" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device=""/>
+<part name="FRAME3" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
 <part name="U2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="MP245X" device="" package3d_urn="urn:adsk.eagle:package:15213528/2" value="MP2451"/>
 <part name="2R1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="124k"/>
 <part name="2R2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="40.2k"/>
@@ -3860,6 +3935,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY15" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="V_USB" device=""/>
 <part name="SUPPLY18" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="12V" device=""/>
 <part name="D4" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV"/>
+<part name="FRAME4" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="FRAME-A4L" device=""/>
+<part name="U3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="LM2587" device="" package3d_urn="urn:adsk.eagle:package:9157861/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -4036,7 +4113,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DRAWING_NAME" x="186.69" y="16.51" size="2.54" layer="94" font="vector"/>
 <attribute name="LAST_DATE_TIME" x="186.69" y="11.43" size="2.286" layer="94" font="vector"/>
 <attribute name="SHEET" x="200.66" y="6.35" size="2.54" layer="94" font="vector"/>
-<attribute name="DESIGNER" x="231.34" y="11.43" size="2.54" layer="94" font="vector"/>
 </instance>
 <instance part="J3" gate="G$1" x="25.4" y="132.08" smashed="yes" rot="MR0">
 <attribute name="NAME" x="30.48" y="139.954" size="1.778" layer="95" font="vector" rot="MR0"/>
@@ -4750,7 +4826,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DRAWING_NAME" x="186.69" y="16.51" size="2.54" layer="94" font="vector"/>
 <attribute name="LAST_DATE_TIME" x="186.69" y="11.43" size="2.286" layer="94" font="vector"/>
 <attribute name="SHEET" x="200.66" y="6.35" size="2.54" layer="94" font="vector"/>
-<attribute name="DESIGNER" x="231.34" y="11.43" size="2.54" layer="94" font="vector"/>
 </instance>
 <instance part="U2" gate="U1" x="193.04" y="154.94" smashed="yes">
 <attribute name="NAME" x="193.04" y="164.592" size="1.524" layer="95" font="vector" ratio="12" align="center"/>
@@ -5173,6 +5248,25 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="139.7" y="76.2"/>
 </segment>
 </net>
+</nets>
+</sheet>
+<sheet>
+<description>Boost Circuits</description>
+<plain>
+</plain>
+<instances>
+<instance part="FRAME4" gate="G$1" x="5.08" y="5.08" smashed="yes">
+<attribute name="DRAWING_NAME" x="186.69" y="16.51" size="2.54" layer="94" font="vector"/>
+<attribute name="LAST_DATE_TIME" x="186.69" y="11.43" size="2.286" layer="94" font="vector"/>
+<attribute name="SHEET" x="200.66" y="6.35" size="2.54" layer="94" font="vector"/>
+</instance>
+<instance part="U3" gate="G$1" x="106.68" y="121.92" smashed="yes">
+<attribute name="NAME" x="106.68" y="128.524" size="1.397" layer="95" font="vector" ratio="12" align="center"/>
+</instance>
+</instances>
+<busses>
+</busses>
+<nets>
 </nets>
 </sheet>
 </sheets>
