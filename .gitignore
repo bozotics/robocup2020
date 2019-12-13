@@ -5,6 +5,7 @@ PCB2k19/
 TestV1/
 TestV2/
 */eagle.epf
-.*
+.DS_Store
+*/.DS_Store
 */*.b#*
 */*.s#*
