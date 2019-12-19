@@ -3,7 +3,7 @@
 <eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -10389,7 +10389,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+7" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="1C1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
 <part name="1C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="10nF"/>
-<part name="1C4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="10nF"/>
+<part name="1C4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
 <part name="1C3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
 <part name="1C7" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="20pF"/>
 <part name="1C8" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="20pF"/>
@@ -10528,6 +10528,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="1J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_20" device="LOCK" package3d_urn="urn:adsk.eagle:package:38199/1"/>
 <part name="P+2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="U3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="MCP41XXX" device="" package3d_urn="urn:adsk.eagle:package:6868027/1"/>
+<part name="1C11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -10776,6 +10777,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="P+2" gate="G$1" x="243.84" y="106.68" smashed="yes">
 <attribute name="VALUE" x="242.824" y="110.236" size="1.778" layer="96"/>
 </instance>
+<instance part="1C11" gate="G$1" x="182.88" y="132.08" smashed="yes" rot="MR0">
+<attribute name="NAME" x="181.356" y="135.001" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="181.356" y="129.921" size="1.778" layer="96" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10826,6 +10831,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="1U1" gate="G$1" pin="VDD_1"/>
 <pinref part="1U1" gate="G$1" pin="VDD_3"/>
 <pinref part="1U1" gate="G$1" pin="VDD_2"/>
+<wire x1="172.72" y1="139.7" x2="182.88" y2="139.7" width="0.1524" layer="91"/>
+<junction x="172.72" y="139.7"/>
+<pinref part="1C11" gate="G$1" pin="1"/>
+<wire x1="182.88" y1="139.7" x2="182.88" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="104.14" y1="172.72" x2="104.14" y2="175.26" width="0.1524" layer="91"/>
@@ -10962,6 +10971,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="1C4" gate="G$1" pin="2"/>
 <pinref part="1C3" gate="G$1" pin="2"/>
 <pinref part="SUPPLY14" gate="1" pin="GND"/>
+<pinref part="1C11" gate="G$1" pin="2"/>
+<wire x1="182.88" y1="127" x2="172.72" y2="127" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="236.22" y1="111.76" x2="236.22" y2="109.22" width="0.1524" layer="91"/>
