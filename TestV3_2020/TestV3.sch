@@ -683,34 +683,6 @@ Pins are staggered 0.005" off center to lock pins while soldering.
 <pad name="P$20" x="1.008" y="-3.721" drill="0.381"/>
 <text x="-4.191" y="0" size="0.8128" layer="25" font="vector" ratio="18" rot="R270" align="center">&gt;NAME</text>
 </package>
-<package name="1000UF-CAP" urn="urn:adsk.eagle:footprint:7103958/3" library_version="61">
-<wire x1="6.865" y1="1.28" x2="8.135" y2="1.28" width="0.2032" layer="21"/>
-<wire x1="8.135" y1="1.28" x2="8.77" y2="0.645" width="0.2032" layer="21"/>
-<wire x1="8.77" y1="-0.625" x2="8.135" y2="-1.26" width="0.2032" layer="21"/>
-<wire x1="6.865" y1="1.28" x2="6.23" y2="0.645" width="0.2032" layer="21"/>
-<wire x1="6.23" y1="-0.625" x2="6.865" y2="-1.26" width="0.2032" layer="21"/>
-<wire x1="8.135" y1="-1.26" x2="6.865" y2="-1.26" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="8.77" y1="0.645" x2="8.77" y2="-0.625" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="6.23" y1="0.645" x2="6.23" y2="-0.625" width="0.2032" layer="21"/>
-<wire x1="9.66" y1="0" x2="10.93" y2="0" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="0" x2="-2.54" y2="0" width="0.127" layer="21"/>
-<wire x1="-3.175" y1="0.635" x2="-3.175" y2="-0.635" width="0.127" layer="21"/>
-<pad name="+" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="-" x="7.5" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<rectangle x1="7.246" y1="-0.244" x2="7.754" y2="0.264" layer="51"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<text x="3.5" y="10.2" size="0.6096" layer="25" font="vector" ratio="20" align="center">&gt;NAME</text>
-<text x="4" y="-10.4" size="0.6096" layer="27" font="vector" ratio="20" align="center">&gt;VALUE</text>
-<circle x="3.5" y="0" radius="9" width="0.127" layer="21"/>
-</package>
 <package name="3296-TRIMPOT" urn="urn:adsk.eagle:footprint:15850923/1" library_version="75">
 <description>&lt;h3&gt;Plated Through Hole - 3 Pin Locking Footprint w/out Silk Outline&lt;/h3&gt;
 Holes are offset from center 0.005" to lock pins in place while soldering. 
@@ -942,11 +914,6 @@ CONN_03
 <package3d name="TO-263" urn="urn:adsk.eagle:package:9157861/3" type="box" library_version="74">
 <packageinstances>
 <packageinstance name="TO-263"/>
-</packageinstances>
-</package3d>
-<package3d name="1000UF-CAP" urn="urn:adsk.eagle:package:7103959/4" type="model" library_version="61">
-<packageinstances>
-<packageinstance name="1000UF-CAP"/>
 </packageinstances>
 </package3d>
 <package3d name="3296-TRIMPOT" urn="urn:adsk.eagle:package:15850924/1" type="box" library_version="75">
@@ -1199,18 +1166,6 @@ Diode with low voltage drop</description>
 <wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
 <text x="0" y="-4.318" size="0.762" layer="94" font="vector" ratio="12" align="center">LM2587</text>
 <text x="0" y="6.604" size="1.397" layer="95" font="vector" ratio="12" align="center">&gt;NAME</text>
-</symbol>
-<symbol name="CPOL-US" urn="urn:adsk.eagle:symbol:7103957/1" library_version="44">
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202"/>
-<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341"/>
-<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
-<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
-<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
-<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 </symbol>
 <symbol name="DRV8833" urn="urn:adsk.eagle:symbol:15861212/1" library_version="78">
 <pin name="SLEEP" x="-12.7" y="0" visible="pin" length="short"/>
@@ -1636,25 +1591,6 @@ Diode with low voltage drop</description>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:9157861/3"/>
-</package3dinstances>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="1000UF-CAP" urn="urn:adsk.eagle:component:7103960/5" prefix="C" uservalue="yes" library_version="61">
-<gates>
-<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1000UF-CAP">
-<connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7103959/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -9467,6 +9403,71 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <smd name="2" x="0" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
 <smd name="3" x="0.8128" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
 </package>
+<package name="SMT-JUMPER_2_NO_NO-SILK" urn="urn:adsk.eagle:footprint:39252/1" library_version="1">
+<text x="0" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.143" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<smd name="1" x="-0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
+<smd name="2" x="0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
+</package>
+<package name="SMT-JUMPER_2_NO_NO-SILK_ROUND" urn="urn:adsk.eagle:footprint:39253/1" library_version="1">
+<smd name="1" x="-1.27" y="0" dx="0.3048" dy="0.1524" layer="1" roundness="20" rot="R270" stop="no" thermals="no" cream="no"/>
+<smd name="2" x="1.27" y="0" dx="0.3048" dy="0.1524" layer="1" roundness="20" rot="R90" stop="no" thermals="no" cream="no"/>
+<text x="0" y="1.9685" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.9685" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<polygon width="0.00508125" layer="1">
+<vertex x="0.111125" y="-1.42875" curve="85"/>
+<vertex x="1.381125" y="0" curve="85"/>
+<vertex x="0.111125" y="1.42875"/>
+</polygon>
+<polygon width="0.00508125" layer="1">
+<vertex x="-0.111125" y="1.42875"/>
+<vertex x="-0.111125" y="-1.42875" curve="-85"/>
+<vertex x="-1.381125" y="0" curve="-85"/>
+</polygon>
+<polygon width="0.2032" layer="29">
+<vertex x="0" y="1.42875" curve="-90"/>
+<vertex x="1.42875" y="0" curve="-90"/>
+<vertex x="0" y="-1.42875" curve="-90"/>
+<vertex x="-1.42875" y="0" curve="-90"/>
+</polygon>
+</package>
+<package name="SMT-JUMPER_2_NO_SILK" urn="urn:adsk.eagle:footprint:39254/1" library_version="1">
+<text x="0" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.143" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="0.8636" y1="-1.016" x2="-0.8636" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="0.8636" y1="1.016" x2="1.1176" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.1176" y1="0.762" x2="-0.8636" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.1176" y1="-0.762" x2="-0.8636" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="0.8636" y1="-1.016" x2="1.1176" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.1176" y1="-0.762" x2="1.1176" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-1.1176" y1="-0.762" x2="-1.1176" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-0.8636" y1="1.016" x2="0.8636" y2="1.016" width="0.1524" layer="21"/>
+<smd name="1" x="-0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
+<smd name="2" x="0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
+</package>
+<package name="SMT-JUMPER_2_NO_SILK_ROUND" urn="urn:adsk.eagle:footprint:39255/1" library_version="1">
+<smd name="1" x="-1.27" y="0" dx="0.3048" dy="0.1524" layer="1" roundness="20" rot="R270" stop="no" thermals="no" cream="no"/>
+<smd name="2" x="1.27" y="0" dx="0.3048" dy="0.1524" layer="1" roundness="20" rot="R90" stop="no" thermals="no" cream="no"/>
+<text x="0" y="1.9685" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.9685" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<polygon width="0.00508125" layer="1">
+<vertex x="0.111125" y="-1.42875" curve="85"/>
+<vertex x="1.381125" y="0" curve="85"/>
+<vertex x="0.111125" y="1.42875"/>
+</polygon>
+<polygon width="0.00508125" layer="1">
+<vertex x="-0.111125" y="1.42875"/>
+<vertex x="-0.111125" y="-1.42875" curve="-85"/>
+<vertex x="-1.381125" y="0" curve="-85"/>
+</polygon>
+<polygon width="0.2032" layer="29">
+<vertex x="0" y="1.42875" curve="-90"/>
+<vertex x="1.42875" y="0" curve="-90"/>
+<vertex x="0" y="-1.42875" curve="-90"/>
+<vertex x="-1.42875" y="0" curve="-90"/>
+</polygon>
+<circle x="0" y="0" radius="1.74625" width="0.2032" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="SMT-JUMPER_3_NO_NO-SILK" urn="urn:adsk.eagle:package:39284/1" type="box" library_version="1">
@@ -9477,6 +9478,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <package3d name="SMT-JUMPER_3_NO_SILK" urn="urn:adsk.eagle:package:39285/1" type="box" library_version="1">
 <packageinstances>
 <packageinstance name="SMT-JUMPER_3_NO_SILK"/>
+</packageinstances>
+</package3d>
+<package3d name="SMT-JUMPER_2_NO_NO-SILK" urn="urn:adsk.eagle:package:39277/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="SMT-JUMPER_2_NO_NO-SILK"/>
+</packageinstances>
+</package3d>
+<package3d name="SMT-JUMPER_2_NO_NO-SILK_ROUND" urn="urn:adsk.eagle:package:39278/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="SMT-JUMPER_2_NO_NO-SILK_ROUND"/>
+</packageinstances>
+</package3d>
+<package3d name="SMT-JUMPER_2_NO_SILK" urn="urn:adsk.eagle:package:39279/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="SMT-JUMPER_2_NO_SILK"/>
+</packageinstances>
+</package3d>
+<package3d name="SMT-JUMPER_2_NO_SILK_ROUND" urn="urn:adsk.eagle:package:39280/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="SMT-JUMPER_2_NO_SILK_ROUND"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -9496,6 +9517,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pin name="3" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
 <pin name="2" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="SMT-JUMPER_2_NO" urn="urn:adsk.eagle:symbol:39251/1" library_version="1">
+<wire x1="0.381" y1="0.635" x2="0.381" y2="-0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.778" layer="96" font="vector" align="top-left">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -9527,6 +9558,68 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:39285/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JUMPER-SMT_2_NO" urn="urn:adsk.eagle:component:39297/1" prefix="JP" library_version="1">
+<description>&lt;h3&gt;Normally open jumper&lt;/h3&gt;
+&lt;p&gt;This jumper has two pads in close proximity to each other. Apply solder to close the connection.&lt;/p&gt;
+
+&lt;p&gt;Round pads are easier to solder for beginners, but are a lot larger.&lt;/p&gt;
+&lt;p&gt;SparkFun Product that uses the round pads:
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/12781"&gt;SparkFun EL Sequencer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="SMT-JUMPER_2_NO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_NO-SILK" package="SMT-JUMPER_2_NO_NO-SILK">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39277/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_NO-SILK_ROUND" package="SMT-JUMPER_2_NO_NO-SILK_ROUND">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39278/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SILK" package="SMT-JUMPER_2_NO_SILK">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39279/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SILK_ROUND" package="SMT-JUMPER_2_NO_SILK_ROUND">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39280/1"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -10619,12 +10712,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="3C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="100UF-POLAR" device="-25V-20%(ELEC)" package3d_urn="urn:adsk.eagle:package:37420/1" value="100uF"/>
 <part name="3R1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="2.94k"/>
 <part name="3C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
-<part name="3C4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="1000UF-CAP" device="" package3d_urn="urn:adsk.eagle:package:7103959/4" value="1000uF"/>
 <part name="3D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="SCHOTTKY-DIODE" device="SMD" package3d_urn="urn:adsk.eagle:package:43404/2" value="SS510"/>
-<part name="POT1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="3296-TRIMPOT" device="" package3d_urn="urn:adsk.eagle:package:15850924/1" value="10k"/>
-<part name="R18" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="45k"/>
-<part name="C3" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="100UF-POLAR" device="-10X10.5-63V-20%" package3d_urn="urn:adsk.eagle:package:37417/1" value="100uF"/>
-<part name="3C3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="0.1uF"/>
+<part name="3POT1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="3296-TRIMPOT" device="" package3d_urn="urn:adsk.eagle:package:15850924/1" value="10k"/>
+<part name="3R4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="45k"/>
+<part name="3C3" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="100UF-POLAR" device="-10X10.5-63V-20%" package3d_urn="urn:adsk.eagle:package:37417/1" value="100uF"/>
+<part name="3C5" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="0.1uF"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_05" device="LOCK" package3d_urn="urn:adsk.eagle:package:38105/1"/>
 <part name="J10" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="-SCREW-5MM" package3d_urn="urn:adsk.eagle:package:38070/1"/>
 <part name="R22" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="3.6k"/>
@@ -10657,7 +10749,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R30" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="10k"/>
 <part name="C20" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="0.1uF"/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="LOCK" package3d_urn="urn:adsk.eagle:package:38132/1"/>
-<part name="R13" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="20k"/>
+<part name="3R3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="20k"/>
 <part name="1J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_20" device="LOCK" package3d_urn="urn:adsk.eagle:package:38199/1"/>
 <part name="U$6" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="AGND" device=""/>
 <part name="U$7" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
@@ -10669,6 +10761,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="LOCK" package3d_urn="urn:adsk.eagle:package:38045/1"/>
 <part name="J11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CONN_03" device="" package3d_urn="urn:adsk.eagle:package:15924798/2"/>
 <part name="2R3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="39k"/>
+<part name="JP1" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_2_NO" device="_NO-SILK_ROUND" package3d_urn="urn:adsk.eagle:package:39278/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -11835,27 +11928,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="54.864" y="43.18" size="1.778" layer="95" font="vector" align="center-left"/>
 <attribute name="VALUE" x="54.864" y="38.1" size="1.778" layer="96" font="vector" align="center-left"/>
 </instance>
-<instance part="3C4" gate="G$1" x="127" y="55.88" smashed="yes">
-<attribute name="NAME" x="128.016" y="56.515" size="1.778" layer="95"/>
-<attribute name="VALUE" x="128.016" y="51.689" size="1.778" layer="96"/>
-</instance>
 <instance part="3D1" gate="G$1" x="88.9" y="68.58" smashed="yes">
 <attribute name="NAME" x="86.614" y="70.485" size="1.778" layer="95"/>
 <attribute name="VALUE" x="86.614" y="65.151" size="1.778" layer="96"/>
 </instance>
-<instance part="POT1" gate="POT1" x="91.44" y="55.88" smashed="yes" rot="R90">
+<instance part="3POT1" gate="POT1" x="91.44" y="55.88" smashed="yes" rot="R90">
 <attribute name="NAME" x="88.9" y="54.356" size="1.778" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="88.9" y="57.404" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
-<instance part="R18" gate="G$1" x="114.3" y="60.96" smashed="yes" rot="R90">
+<instance part="3R4" gate="G$1" x="114.3" y="60.96" smashed="yes" rot="R90">
 <attribute name="NAME" x="112.776" y="60.96" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="115.824" y="60.96" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
 </instance>
-<instance part="C3" gate="G$1" x="119.38" y="55.88" smashed="yes">
+<instance part="3C3" gate="G$1" x="119.38" y="55.88" smashed="yes">
 <attribute name="NAME" x="120.396" y="56.515" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="120.396" y="51.689" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="3C3" gate="G$1" x="185.42" y="53.34" smashed="yes">
+<instance part="3C5" gate="G$1" x="185.42" y="53.34" smashed="yes">
 <attribute name="NAME" x="186.944" y="55.88" size="1.778" layer="95" font="vector" align="center-left"/>
 <attribute name="VALUE" x="186.944" y="50.8" size="1.778" layer="96" font="vector" align="center-left"/>
 </instance>
@@ -11867,7 +11956,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="20.32" y="40.894" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="20.32" y="53.848" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="R13" gate="G$1" x="96.52" y="48.26" smashed="yes">
+<instance part="3R3" gate="G$1" x="96.52" y="48.26" smashed="yes">
 <attribute name="NAME" x="96.52" y="49.784" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="96.52" y="46.736" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
@@ -11886,6 +11975,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="2R3" gate="G$1" x="210.82" y="152.4" smashed="yes" rot="R180">
 <attribute name="NAME" x="210.82" y="150.876" size="1.778" layer="95" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="210.82" y="153.924" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
+</instance>
+<instance part="JP1" gate="G$1" x="139.7" y="35.56" smashed="yes">
+<attribute name="NAME" x="137.16" y="38.1" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="137.16" y="33.02" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 </instances>
 <busses>
@@ -12230,22 +12323,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="3U1" gate="G$1" pin="FDBK"/>
 <wire x1="81.28" y1="55.88" x2="83.82" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="55.88" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="POT1" gate="POT1" pin="CCW"/>
+<pinref part="3POT1" gate="POT1" pin="CCW"/>
 <wire x1="83.82" y1="55.88" x2="86.36" y2="55.88" width="0.1524" layer="91"/>
 <junction x="83.82" y="55.88"/>
-<pinref part="POT1" gate="POT1" pin="WIPER"/>
+<pinref part="3POT1" gate="POT1" pin="WIPER"/>
 <wire x1="91.44" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="60.96" x2="86.36" y2="55.88" width="0.1524" layer="91"/>
 <junction x="86.36" y="55.88"/>
 <label x="78.74" y="55.88" size="1.778" layer="95"/>
-<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="3R3" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="55.88" x2="86.36" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="POT1" gate="POT1" pin="CW"/>
+<pinref part="3POT1" gate="POT1" pin="CW"/>
 <wire x1="96.52" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="60.96" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
@@ -12256,9 +12349,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="R18" gate="G$1" pin="1"/>
+<pinref part="3R4" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="55.88" x2="111.76" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="R13" gate="G$1" pin="2"/>
+<pinref part="3R3" gate="G$1" pin="2"/>
 <wire x1="111.76" y1="55.88" x2="114.3" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="48.26" x2="111.76" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="48.26" x2="111.76" y2="55.88" width="0.1524" layer="91"/>
@@ -12391,29 +12484,36 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="VIN-POT" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="2"/>
-<wire x1="154.94" y1="50.8" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
-<label x="152.4" y="50.8" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="3C3" gate="G$1" pin="1"/>
+<pinref part="3C5" gate="G$1" pin="1"/>
 <wire x1="185.42" y1="58.42" x2="177.8" y2="58.42" width="0.1524" layer="91"/>
 <label x="177.8" y="58.42" size="1.778" layer="95"/>
 <pinref part="U3" gate="U1" pin="VCC"/>
 </segment>
-</net>
-<net name="GND-POT" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="48.26" x2="157.48" y2="48.26" width="0.1524" layer="91"/>
 <label x="152.4" y="48.26" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="GND-POT" class="0">
 <segment>
-<pinref part="3C3" gate="G$1" pin="2"/>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="144.78" y1="35.56" x2="152.4" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="2"/>
+<wire x1="154.94" y1="50.8" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="35.56" x2="152.4" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="50.8" x2="154.94" y2="50.8" width="0.1524" layer="91"/>
+<junction x="154.94" y="50.8"/>
+<label x="152.4" y="50.8" size="1.778" layer="95"/>
+<wire x1="152.4" y1="35.56" x2="177.8" y2="35.56" width="0.1524" layer="91"/>
+<junction x="152.4" y="35.56"/>
+<pinref part="3C5" gate="G$1" pin="2"/>
 <wire x1="177.8" y1="55.88" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="48.26" x2="185.42" y2="48.26" width="0.1524" layer="91"/>
 <label x="177.8" y="45.72" size="1.778" layer="95"/>
 <pinref part="U3" gate="U1" pin="GND"/>
+<wire x1="177.8" y1="35.56" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
+<junction x="177.8" y="48.26"/>
 </segment>
 </net>
 <net name="GND-BOOST" class="0">
@@ -12424,7 +12524,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="3R2" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="43.18" x2="83.82" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="35.56" x2="58.42" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="127" y1="35.56" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
 <junction x="83.82" y="35.56"/>
 <pinref part="3C1" gate="G$1" pin="-"/>
 <wire x1="119.38" y1="35.56" x2="83.82" y2="35.56" width="0.1524" layer="91"/>
@@ -12435,33 +12534,30 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="3C2" gate="G$1" pin="2"/>
 <wire x1="53.34" y1="35.56" x2="58.42" y2="35.56" width="0.1524" layer="91"/>
 <junction x="53.34" y="35.56"/>
-<pinref part="3C4" gate="G$1" pin="-"/>
-<wire x1="127" y1="50.8" x2="127" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="-"/>
+<pinref part="3C3" gate="G$1" pin="-"/>
 <wire x1="119.38" y1="50.8" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
-<junction x="119.38" y="35.56"/>
 <label x="76.2" y="33.02" size="1.778" layer="95"/>
 <pinref part="J10" gate="J$1" pin="2"/>
 <wire x1="30.48" y1="48.26" x2="43.18" y2="48.26" width="0.1524" layer="91"/>
 <junction x="43.18" y="48.26"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="134.62" y1="35.56" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
+<junction x="119.38" y="35.56"/>
 </segment>
 </net>
 <net name="VOUT-BOOST" class="0">
 <segment>
 <pinref part="3D1" gate="G$1" pin="C"/>
 <wire x1="91.44" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="3C4" gate="G$1" pin="+"/>
 <wire x1="114.3" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="68.58" x2="127" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="127" y1="68.58" x2="127" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="R18" gate="G$1" pin="2"/>
+<pinref part="3R4" gate="G$1" pin="2"/>
 <wire x1="114.3" y1="66.04" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
 <junction x="114.3" y="68.58"/>
-<pinref part="C3" gate="G$1" pin="+"/>
+<pinref part="3C3" gate="G$1" pin="+"/>
 <wire x1="119.38" y1="58.42" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
 <junction x="119.38" y="68.58"/>
 <wire x1="127" y1="71.12" x2="127" y2="68.58" width="0.1524" layer="91"/>
-<junction x="127" y="68.58"/>
 <label x="114.3" y="71.12" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -12920,9 +13016,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="218.44" y="154.94" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="193.04" y1="139.7" x2="195.58" y2="139.7" width="0.1524" layer="91"/>
-<label x="190.5" y="139.7" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="193.04" y1="137.16" x2="195.58" y2="137.16" width="0.1524" layer="91"/>
+<label x="190.5" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND-CS" class="0">
@@ -12939,9 +13035,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="218.44" y="137.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="193.04" y1="137.16" x2="195.58" y2="137.16" width="0.1524" layer="91"/>
-<label x="190.5" y="137.16" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="193.04" y1="139.7" x2="195.58" y2="139.7" width="0.1524" layer="91"/>
+<label x="190.5" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$14" class="0">
