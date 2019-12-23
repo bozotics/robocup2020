@@ -11890,7 +11890,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="4JP1" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_3_NO" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39284/1" value="JUMPER-SMT_3_NO_NO-SILK"/>
 <part name="4JP2" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_3_NO" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39284/1" value="JUMPER-SMT_3_NO_NO-SILK"/>
 <part name="4R5" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="49.9k"/>
-<part name="4C11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="4.7nF"/>
+<part name="4C11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="4700pF"/>
 <part name="4C12" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="39pF"/>
 <part name="4R7" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="1.91k"/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VOUT" device=""/>
@@ -11913,7 +11913,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="3C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1uF"/>
 <part name="3D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="SCHOTTKY-DIODE" device="SMD" package3d_urn="urn:adsk.eagle:package:43404/2" value="SS510"/>
 <part name="3POT1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="3296-TRIMPOT" device="" package3d_urn="urn:adsk.eagle:package:15850924/1" value="10k"/>
-<part name="3R4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="45k"/>
+<part name="3R4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="47k"/>
 <part name="3C3" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="100UF-POLAR" device="-10X10.5-63V-20%" package3d_urn="urn:adsk.eagle:package:37417/1" value="100uF"/>
 <part name="3C5" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="0.1uF"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_05" device="LOCK" package3d_urn="urn:adsk.eagle:package:38105/1"/>
@@ -11937,7 +11937,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C16" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0805" package3d_urn="urn:adsk.eagle:package:15862192/1" value="10uF">
 <attribute name="VOLTAGE" value="16V"/>
 </part>
-<part name="R28" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="20k-75k"/>
+<part name="R28" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="47k"/>
 <part name="R29" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="100k"/>
 <part name="J4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30UPB-F" device="" package3d_urn="urn:adsk.eagle:package:15925142/1"/>
 <part name="J6" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30UPB-F" device="" package3d_urn="urn:adsk.eagle:package:15925142/1"/>
