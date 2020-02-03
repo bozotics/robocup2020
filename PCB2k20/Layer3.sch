@@ -3,7 +3,7 @@
 <eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -16948,7 +16948,7 @@ Datasheet</description>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND4" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="2C5" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="0.1uF"/>
-<part name="2R2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="5.9k"/>
+<part name="2R2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="3.24k"/>
 <part name="SUPPLY9" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="12V" device=""/>
 <part name="SUPPLY10" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="5V" device=""/>
 <part name="SUPPLY12" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="12V" device=""/>
@@ -16974,6 +16974,7 @@ Datasheet</description>
 <part name="AT_SELECT" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CONN_03" device="" package3d_urn="urn:adsk.eagle:package:15924798/2"/>
 <part name="GND3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="PCB1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RPI3" device="" package3d_urn="urn:adsk.eagle:package:9592022/2"/>
+<part name="U$2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT60" device="XT60PW-F" package3d_urn="urn:adsk.eagle:package:16411181/4"/>
 </parts>
 <sheets>
 <sheet>
@@ -17130,6 +17131,10 @@ Datasheet</description>
 <attribute name="VALUE" x="124.46" y="30.226" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="PCB1" gate="G$1" x="101.6" y="88.9" smashed="yes"/>
+<instance part="U$2" gate="G$1" x="182.88" y="45.72" smashed="yes">
+<attribute name="NAME" x="179.578" y="40.64" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="187.96" y="40.64" size="1.778" layer="95" font="vector" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
