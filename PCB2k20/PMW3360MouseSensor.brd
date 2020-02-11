@@ -193,7 +193,8 @@
 <text x="4.699" y="3.175" size="0.6096" layer="21" font="vector" ratio="16" align="bottom-center">3v3</text>
 <text x="33.401" y="12" size="0.8128" layer="21" font="vector" ratio="16" rot="R90" align="bottom-center">WARNING
 MAX 3.3v on all pins!!!
-github.com/hcbozo</text>
+github.com/hcbozo
+PMW3360 Breakout</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">

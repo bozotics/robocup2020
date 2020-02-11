@@ -17352,7 +17352,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="2C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="4.7uF"/>
 <part name="2C3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="10.0nF"/>
 <part name="2D1" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV"/>
-<part name="2L1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="INDUCTOR" device="SWPA8040" package3d_urn="urn:adsk.eagle:package:15402033/4" value="SWPA8040/10uH"/>
+<part name="2L1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="INDUCTOR" device="SWPA8040" package3d_urn="urn:adsk.eagle:package:15402033/4" value="10uH"/>
 <part name="2R1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="10k"/>
 <part name="2C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="D/7343-31R" package3d_urn="urn:adsk.eagle:package:23417/2" value="220uF"/>
 <part name="2C1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="1210" package3d_urn="urn:adsk.eagle:package:15441227/3" value="22.0uF"/>
@@ -17400,6 +17400,9 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="J3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="14AWG" device="" package3d_urn="urn:adsk.eagle:package:16673531/1"/>
 <part name="J4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="14AWG" device="" package3d_urn="urn:adsk.eagle:package:16673531/1"/>
 <part name="J6" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="14AWG" device="" package3d_urn="urn:adsk.eagle:package:16673531/1"/>
+<part name="R11" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="1k"/>
+<part name="SUPPLY3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device="" value="GND"/>
+<part name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-BLUE" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="BLUE"/>
 </parts>
 <sheets>
 <sheet>
@@ -17601,6 +17604,17 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <attribute name="VALUE" x="241.3" y="91.186" size="1.778" layer="96" font="vector" rot="R180"/>
 <attribute name="NAME" x="241.3" y="83.312" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
+<instance part="R11" gate="G$1" x="200.66" y="78.74" smashed="yes" rot="MR0">
+<attribute name="NAME" x="202.7174" y="73.406" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="201.168" y="83.058" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="SUPPLY3" gate="1" x="220.98" y="78.74" smashed="yes" rot="R90">
+<attribute name="VALUE" x="224.155" y="76.073" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="D1" gate="G$1" x="210.82" y="78.74" smashed="yes" rot="R90">
+<attribute name="NAME" x="215.392" y="75.311" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="215.392" y="80.645" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -17711,6 +17725,11 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="S1" gate="G$1" pin="6"/>
 <wire x1="12.7" y1="50.8" x2="10.16" y2="50.8" width="0.1524" layer="91"/>
 <junction x="10.16" y="50.8"/>
+</segment>
+<segment>
+<wire x1="215.9" y1="78.74" x2="218.44" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="SUPPLY3" gate="1" pin="GND"/>
+<pinref part="D1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="BT_RX" class="0">
@@ -18158,6 +18177,20 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <label x="30.48" y="53.34" size="1.778" layer="95"/>
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="66.04" x2="40.64" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="RPI_UART" gate="G$1" pin="4"/>
+<wire x1="187.96" y1="78.74" x2="195.58" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<wire x1="205.74" y1="78.74" x2="208.28" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="D1" gate="G$1" pin="A"/>
 </segment>
 </net>
 </nets>
@@ -18680,6 +18713,13 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="X1" gate="G$1" pin="5"/>
 <wire x1="40.64" y1="111.76" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
 <label x="43.18" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IMU_RST" class="0">
+<segment>
+<pinref part="1U1" gate="G$1" pin="PC13-TAMPER-RTC"/>
+<wire x1="114.3" y1="101.6" x2="104.14" y2="101.6" width="0.1524" layer="91"/>
+<label x="104.14" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

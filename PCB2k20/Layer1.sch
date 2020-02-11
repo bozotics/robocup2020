@@ -967,7 +967,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <pad name="P$5" x="-0.5" y="-0.8" drill="0.381"/>
 <pad name="P$6" x="0.5" y="-0.8" drill="0.381"/>
 </package>
-<package name="XT30PB-F" urn="urn:adsk.eagle:footprint:15925141/3" library_version="146">
+<package name="XT30PB-F" urn="urn:adsk.eagle:footprint:15925141/6" library_version="161">
 <wire x1="-5.1" y1="-2.8" x2="-5.1" y2="2.8" width="0.127" layer="21"/>
 <wire x1="3.81" y1="2.794" x2="5.1" y2="1.27" width="0.127" layer="21"/>
 <wire x1="5.1" y1="-1.27" x2="3.81" y2="-2.794" width="0.127" layer="21"/>
@@ -977,8 +977,8 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <wire x1="5.588" y1="0" x2="6.096" y2="0" width="0.127" layer="21"/>
 <wire x1="-5.588" y1="0" x2="-6.096" y2="0" width="0.127" layer="21"/>
 <wire x1="-5.842" y1="0.254" x2="-5.842" y2="-0.254" width="0.127" layer="21"/>
-<pad name="+" x="-2.5" y="0" drill="2.2"/>
-<pad name="-" x="2.5" y="0" drill="2.2"/>
+<pad name="+" x="-2.5" y="0" drill="2"/>
+<pad name="-" x="2.5" y="0" drill="2"/>
 <text x="-5.08" y="3.175" size="1.27" layer="25">&gt;Name</text>
 </package>
 <package name="XT30PW-F" urn="urn:adsk.eagle:footprint:16702936/4" library_version="146">
@@ -1233,7 +1233,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <packageinstance name="POWERPAD-SOIC-8"/>
 </packageinstances>
 </package3d>
-<package3d name="XT30UPB-F" urn="urn:adsk.eagle:package:15925142/4" type="model" library_version="146">
+<package3d name="XT30UPB-F" urn="urn:adsk.eagle:package:15925142/7" type="model" library_version="161">
 <packageinstances>
 <packageinstance name="XT30PB-F"/>
 </packageinstances>
@@ -1992,7 +1992,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="XT30" urn="urn:adsk.eagle:component:15925143/6" prefix="J" library_version="146">
+<deviceset name="XT30" urn="urn:adsk.eagle:component:15925143/9" prefix="J" library_version="161">
 <gates>
 <gate name="G$1" symbol="POWER_CONSORT" x="0" y="0"/>
 </gates>
@@ -2003,7 +2003,7 @@ www.fma.fujitsu.com/pdf/e713717.pdf</description>
 <connect gate="G$1" pin="P$V-" pad="-"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -19617,7 +19617,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="2C2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="4.7uF"/>
 <part name="2C3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="10.0nF"/>
 <part name="2D1" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV"/>
-<part name="2L1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="INDUCTOR" device="SWPA8040" package3d_urn="urn:adsk.eagle:package:15402033/4" value="SWPA8040/10uH"/>
+<part name="2L1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="INDUCTOR" device="SWPA8040" package3d_urn="urn:adsk.eagle:package:15402033/4" value="10uH"/>
 <part name="2R1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="10k"/>
 <part name="2C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="D/7343-31R" package3d_urn="urn:adsk.eagle:package:23417/2" value="220uF"/>
 <part name="2C1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="1210" package3d_urn="urn:adsk.eagle:package:15441227/3" value="22.0uF"/>
@@ -19627,7 +19627,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="2R2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="5.9k"/>
 <part name="SUPPLY25" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="12V" device=""/>
 <part name="SUPPLY26" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
-<part name="CONN_M1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<part name="CONN_M1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 <part name="U$4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="74LVC2G" device="" package3d_urn="urn:adsk.eagle:package:16673544/1"/>
 <part name="U$5" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="74LVC2G" device="" package3d_urn="urn:adsk.eagle:package:16673544/1"/>
 <part name="SUPPLY27" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
@@ -19635,21 +19635,21 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="D1M2" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-GREEN" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="GREEN"/>
 <part name="D2M2" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-RED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="RED"/>
 <part name="R12M2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="4.7k"/>
-<part name="CONN_M2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<part name="CONN_M2" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 <part name="D1M3" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-GREEN" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="GREEN"/>
 <part name="D2M3" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-RED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="RED"/>
 <part name="R12M3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="4.7k"/>
-<part name="CONN_M3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<part name="CONN_M3" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 <part name="D1M4" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-GREEN" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="GREEN"/>
 <part name="D2M4" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-RED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="RED"/>
 <part name="R12M4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="4.7k"/>
-<part name="CONN_M4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<part name="CONN_M4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 <part name="GND24" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="SUPPLY29" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="MOUSE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="LOCK" package3d_urn="urn:adsk.eagle:package:38137/1"/>
 <part name="SUPPLY31" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="GND26" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="3C4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="1000UF-CAP" device="" package3d_urn="urn:adsk.eagle:package:7103959/4" value="1500uF"/>
+<part name="3C4" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="1000UF-CAP" device="" package3d_urn="urn:adsk.eagle:package:7103959/4" value="1000uF/63V"/>
 <part name="1PT37" library="SparkFun-Sensors" deviceset="LIGHT_SENSOR" device="ALS"/>
 <part name="1PT38" library="SparkFun-Sensors" deviceset="LIGHT_SENSOR" device="ALS"/>
 <part name="1D38" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="3528LED" device="" package3d_urn="urn:adsk.eagle:package:6740529/3"/>
@@ -19671,7 +19671,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="3D5" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N5400" device="" package3d_urn="urn:adsk.eagle:package:43365/1" value="1N5401"/>
 <part name="3C7" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441226/3" value="1500pF"/>
 <part name="3R10" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:15441228/3" value="20"/>
-<part name="J1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/4"/>
+<part name="J1" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="XT30" device="PB-F" package3d_urn="urn:adsk.eagle:package:15925142/7"/>
 <part name="U$6" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="U$7" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="U$8" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
@@ -19745,6 +19745,8 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="GND27" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="U$27" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="18AWG" device="" package3d_urn="urn:adsk.eagle:package:16754415/1"/>
 <part name="U$28" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="18AWG" device="" package3d_urn="urn:adsk.eagle:package:16754415/1"/>
+<part name="U$29" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="14AWG" device="" package3d_urn="urn:adsk.eagle:package:16673531/1"/>
+<part name="J21" library="JH" library_urn="urn:adsk.eagle:library:6027132" deviceset="14AWG" device="" package3d_urn="urn:adsk.eagle:package:16673531/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -22838,6 +22840,10 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <attribute name="VALUE" x="180.34" y="164.846" size="1.778" layer="96" font="vector" rot="R180"/>
 <attribute name="NAME" x="180.34" y="156.972" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
+<instance part="U$29" gate="G$1" x="17.78" y="15.24" smashed="yes">
+<attribute name="VALUE" x="15.24" y="10.414" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="15.24" y="18.288" size="1.778" layer="95" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -22943,6 +22949,9 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <wire x1="111.76" y1="30.48" x2="111.76" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="15.24" x2="104.14" y2="15.24" width="0.1524" layer="91"/>
 <junction x="104.14" y="15.24"/>
+<pinref part="U$29" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="15.24" x2="27.94" y2="15.24" width="0.1524" layer="91"/>
+<junction x="27.94" y="15.24"/>
 </segment>
 <segment>
 <pinref part="MOUSE" gate="G$1" pin="2"/>
@@ -23908,6 +23917,10 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <instance part="GND27" gate="1" x="160.02" y="86.36" smashed="yes">
 <attribute name="VALUE" x="160.02" y="86.106" size="1.778" layer="96" align="top-center"/>
 </instance>
+<instance part="J21" gate="G$1" x="124.46" y="139.7" smashed="yes">
+<attribute name="VALUE" x="121.92" y="134.874" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="121.92" y="142.748" size="1.778" layer="95" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -23978,14 +23991,18 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="U$26" gate="G$1" pin="P$V-"/>
 <wire x1="134.62" y1="66.04" x2="134.62" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="142.24" x2="134.62" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="142.24" x2="134.62" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="142.24" x2="134.62" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="J6" gate="G$1" pin="1"/>
+<wire x1="134.62" y1="139.7" x2="134.62" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="129.54" x2="134.62" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="129.54" x2="134.62" y2="129.54" width="0.1524" layer="91"/>
 <junction x="134.62" y="129.54"/>
 <pinref part="J12" gate="G$1" pin="1"/>
 <wire x1="132.08" y1="66.04" x2="134.62" y2="66.04" width="0.1524" layer="91"/>
 <junction x="134.62" y="66.04"/>
+<pinref part="J21" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="139.7" x2="134.62" y2="139.7" width="0.1524" layer="91"/>
+<junction x="134.62" y="139.7"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
