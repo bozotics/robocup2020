@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceRoot}",
+                "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/cores/usb_serial",
+                "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/cores/teensy3/**",
+                "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/**",
+                "/Applications/Teensyduino.app/Contents/Java/hardware/tools/**",
+                "/Users/JH/Documents/Arduino/libraries/**"
+            ],
+            "forcedInclude": [
+                "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/cores/teensy3/Arduino.h",
+                "Config.h"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/Applications/Teensyduino.app/Contents/Java/hardware/tools/arm/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "defines": [
+                "__MK64FX512__",
+                "TEENSYDUINO=151",
+                "USB_SERIAL",
+                "F_CPU=120000000",
+                "ARDUINO_TEENSY35",
+                "LAYOUT_US_ENGLISH",
+                "ARDUINO=10812"
+            ]
+        }
+    ],
+    "version": 4
+}
