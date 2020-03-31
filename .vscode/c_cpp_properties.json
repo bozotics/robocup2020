@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceRoot}",
+                "/Users/JH/Documents/Arduino/libraries/**",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino/**",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/libraries/**",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/variants/MAPLEMINI_F103CB",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/**",
+                "/Users/JH/Library/Arduino15/packages/STM32/tools/**"
+            ],
+            "forcedInclude": [
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino/Arduino.h",
+                "Config.h"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/Users/JH/Library/Arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "defines": [
+                "ARDUINO=10812",
+                "ARDUINO_MAPLEMINI_F103CB",
+                "BOARD_NAME=MAPLEMINI_F103CB",
+                "ARDUINO_ARCH_STM32",
+                "HAL_UART_MODULE_ENABLED",
+                "STM32F103xB",
+                "STM32F1xx"
+            ]
+        }
+    ],
+    "version": 4
+}

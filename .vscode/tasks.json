@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "arduino-cli compile --fqbn STM32:stm32:GenF1:pnum=MAPLEMINI_F103CB --build-path ${workspaceFolder}/build --build-cache-path ${workspaceFolder}/build -o zzzBuildOut --warnings all ${fileDirname} && STM32_Programmer_CLI -c port=SWD -d ${workspaceFolder}/build/${workspaceFolderBasename}.ino.bin 0x8000000 -rst",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "STLINK",
+            "type": "shell",
+            "command": "STM32_Programmer_CLI -c port=SWD -d ${workspaceFolder}/build/${workspaceFolderBasename}.ino.bin 0x8000000 -rst",
+            "group": "none",
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
