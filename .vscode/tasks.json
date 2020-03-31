@@ -6,7 +6,12 @@
         {
             "label": "compile",
             "type": "shell",
-            "command": "arduino-cli compile --fqbn STM32:stm32:GenF1:pnum=MAPLEMINI_F103CB --build-path ${workspaceFolder}/build --build-cache-path ${workspaceFolder}/build -o zzzBuildOut --warnings all ${fileDirname} && STM32_Programmer_CLI -c port=SWD -d ${workspaceFolder}/build/${workspaceFolderBasename}.ino.bin 0x8000000 -rst",
+            "osx": {
+                "command": "arduino-cli compile --fqbn STM32:stm32:GenF1:pnum=MAPLEMINI_F103CB --build-path ${workspaceFolder}/build --build-cache-path ${workspaceFolder}/build -o zzzBuildOut --warnings all ${fileDirname} && STM32_Programmer_CLI -c port=SWD -d ${workspaceFolder}/build/${workspaceFolderBasename}.ino.bin 0x8000000 -rst",
+            },
+            "windows": {
+                "command": "C:\\Users\\JH\\bin\\arduino-cli compile --fqbn STM32:stm32:GenF1:pnum=MAPLEMINI_F103CB --build-path ${workspaceFolder}\\build --build-cache-path ${workspaceFolder}\\build -o zzzBuildOut --warnings all ${fileDirname}"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
