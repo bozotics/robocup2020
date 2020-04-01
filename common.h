@@ -52,4 +52,3 @@ byte receivedChars[32];
 
 void processLight(byte *data);
 void recvCalib();
-void sendCalib();

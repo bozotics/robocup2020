@@ -59,12 +59,11 @@ void loop()
 		battTime = 0;
 	}
 #endif
+
 	DIP1.update();
 	DIP2.update();
 	DIP3.update();
 	DIP4.update();
-
-	DIPTime = 0;
 
 	if (DIP1.fell())
 	{
@@ -72,36 +71,11 @@ void loop()
 		Serial.println("Running LS Cal...");
 #endif
 		serialWrite(l1Serial, 'N');
-		for (int i = 0; i < 40; i++)
-		{
-			lightMin[i] = 1200;
-			lightMax[i] = 0;
-		}
-
 		while (!DIP1.rose())
 		{
 			recvCalib();
 			DIP1.update();
-#ifdef DEBUG
-			//Serial.println(sTimeout);
-			if (sTimeout > 500)
-			{
-				for (int i = 0; i < 40; i++)
-				{
-					Serial.print("No:  ");
-					Serial.print(i);
-					Serial.print("\tMin:  ");
-					Serial.print(lightMin[i]);
-					Serial.print("\tMax:  ");
-					Serial.println(lightMax[i]);
-				}
-				sTimeout = 0;
-			}
-#endif
 		}
-
 		serialWrite(l1Serial, 'L');
-		sendCalib();
 	}
-	//delay(100);
 }

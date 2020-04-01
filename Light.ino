@@ -35,11 +35,10 @@ void recvCalib()
 			if (rc == separator2 && i)
 			{
 				receivedChars[ndx] = '\0'; // terminate the string
-				lightTemp = fast_atoi(receivedChars);
-				if (lightTemp > lightMax[i])
-					lightMax[i] = lightTemp;
-				else if (lightTemp < lightMin[i])
-					lightMin[i] = lightTemp;
+				Serial.print("No. ");
+				Serial.print(i);
+				Serial.print("\tThres:");
+				Serial.print(fast_atoi(receivedChars));
 				memset(receivedChars, 0, sizeof(receivedChars));
 				ndx = 0;
 			}
@@ -50,16 +49,21 @@ void recvCalib()
 				if (fast_atoi(receivedChars) - i > 1 && fast_atoi(receivedChars) != 1)
 					Serial.println("Missed data during LS calibration");
 #endif
-				i = fast_atoi(receivedChars) - 1;
+				i = fast_atoi(receivedChars);
 				memset(receivedChars, 0, sizeof(receivedChars));
 				ndx = 0;
 			}
 			else if (rc == endMarker)
 			{
+				receivedChars[ndx] = '\0'; // terminate the string
+				Serial.print("No. ");
+				Serial.print(i);
+				Serial.print("\tThres:");
+				Serial.print(fast_atoi(receivedChars));
+				memset(receivedChars, 0, sizeof(receivedChars));
 				ndx = 0;
 				i = 0;
 				recvInProgress = false;
-				break;
 			}
 			else
 			{
@@ -77,18 +81,4 @@ void recvCalib()
 		else if (rc == startMarker)
 			recvInProgress = true;
 	}
-}
-
-void sendCalib()
-{
-	for (int i = 0; i < 40; i++)
-	{
-		lightThres[i] = (lightMax[i] + lightMin[i]) / 2;
-		l1Serial.print('/');
-		l1Serial.print(i);
-		l1Serial.print(',');
-		l1Serial.print(lightThres[i]);
-		delay(5);
-	}
-	l1Serial.print('|');
 }
