@@ -91,100 +91,78 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 #ifdef DEBUG
 	Serial2.println("Blocking program for Calibration");
 #endif
-	const unsigned long timeout = 60000;
-	unsigned long timeStart = millis();
+	const unsigned long timeout = 60000, sendTime = 500;
+	unsigned long timeStart = millis(), sendMillis = millis();
+	int lightMin[40], lightMax[40];
+	for (int i = 0; i < 40; i++)
+	{
+		lightMin[i] = 1200;
+		lightMax[i] = 0;
+	}
 	while ((millis() - timeStart) < timeout)
 	{
 		updateLight();
 		if (lightCnt == 0)
 		{
-			Serial1.print('N');
-			for (int i = 1; i <= 40; i++)
+			for (int i = 0; i < 40; i++)
 			{
-				Serial1.print('/');
-				Serial1.print(i);
-				Serial1.print(',');
-				Serial1.print(lightVals[i - 1]);
+				if (lightVals[i] > lightMax[i])
+					lightMax[i] = lightVals[i];
+				else if (lightVals[i] < lightMin[i])
+					lightMin[i] = lightVals[i];
 			}
-			Serial1.print('|');
+			if ((millis() - sendMillis) < sendTime)
+			{
+				Serial1.print('N');
+				for (int i = 1; i <= 40; i++)
+				{
+					Serial1.print('/');
+					Serial1.print(i);
+					Serial1.print(',');
+					Serial1.print((lightMax[i - 1] + lightMin[i - 1]) / 2);
+				}
+				Serial1.print('|');
+#ifdef DEBUG
+				for (int i = 1; i <= 40; i++)
+				{
+					Serial2.print(i);
+					Serial2.print(', Thres:  ');
+					Serial2.println((lightMax[i - 1] + lightMin[i - 1]) / 2);
+				}
+#endif
+			}
 		}
 		if (Serial1.available())
 		{
 			if (Serial1.read() == 'L')
 			{
 #ifdef DEBUG
-				Serial2.println("receiving calib");
+				Serial2.println("finished calib");
 #endif
-				recvCalib();
-				break;
-			}
-		}
-	}
-}
-
-void recvCalib()
-{
-	unsigned int ndx = 0;
-	int i = -1;
-	const byte endMarker = '|', separator = ',', separator2 = '/'; // format L/0,300/1,200/2,900/.../39,200|
-	byte rc, receivedChars[32];
-	const unsigned long timeout = 1000;
-	unsigned long timeStart = millis();
-	while ((millis() - timeStart) < timeout)
-	{
-		while (Serial1.available())
-		{
-			rc = Serial1.read();
-			if (rc == separator2 && i == -1)
-			{
-			}
-			if (rc == separator2 && i != -1)
-			{
-				receivedChars[ndx] = '\0'; // terminate the string
-				lightThres[i] = fast_atoi(receivedChars);
-
-				unsigned char Char1; // lower byte
-				unsigned char Char2; // upper byte
-				Char1 = lightThres[i] & 0xFF;
-				Char2 = lightThres[i] >> 8;
-				eeprom_buffered_write_byte(i + 1, Char1);
-				eeprom_buffered_write_byte(i + 41, Char2);
-
-				memset(receivedChars, 0, sizeof(receivedChars));
-				ndx = 0;
-			}
-			else if (rc == separator)
-			{
-				receivedChars[ndx] = '\0'; // terminate the string
-#ifdef DEBUG
-				if (fast_atoi(receivedChars) - i > 1)
-					Serial2.println("Missed data during LS calibration");
-#endif
-				i = fast_atoi(receivedChars) - 1;
-				memset(receivedChars, 0, sizeof(receivedChars));
-				ndx = 0;
-			}
-			else if (rc == endMarker)
-			{
-#ifdef DEBUG
-				Serial2.println("Writing calibration data to EEPROM...");
-#endif
-				eeprom_buffer_flush();
-				ndx = 0;
-				i = -1;
-				break;
-			}
-			else
-			{
-				receivedChars[ndx] = rc;
-				ndx++;
-				if (ndx >= sizeof(receivedChars))
+				Serial1.print('N');
+				for (int i = 0; i < 40; i++)
 				{
+					lightThres[i] = (lightMax[i - 1] + lightMin[i - 1]) / 2;
+					unsigned char Char1; // lower byte
+					unsigned char Char2; // upper byte
+					Char1 = lightThres[i] & 0xFF;
+					Char2 = lightThres[i] >> 8;
+					eeprom_buffered_write_byte(i + 1, Char1);
+					eeprom_buffered_write_byte(i + 41, Char2);
+
+					Serial1.print('/');
+					Serial1.print(i+1);
+					Serial1.print(',');
+					Serial1.print(lightThres[i]);
 #ifdef DEBUG
-					Serial2.println("Too many chars!");
+					Serial2.print(i);
+					Serial2.print(', Thres:  ');
+					Serial2.println(lightThres[i]);
 #endif
-					ndx = sizeof(receivedChars) - 1;
 				}
+				Serial1.print('|');
+				eeprom_buffer_flush();
+				break;
 			}
 		}
 	}

@@ -67,26 +67,4 @@ void loop()
 		digitalWriteFast(solenoid, 0);
 		kick = false;
 	}
-
-	/*
-	for (int i = 0; i < 16; i++) {
-		digitalWriteFast(S0, sigTable[i][0]);
-    	digitalWriteFast(S1, sigTable[i][1]);
-    	digitalWriteFast(S2, sigTable[i][2]);
-    	digitalWriteFast(S3, sigTable[i][3]);
-		delayMicroseconds(100);
-		readTable[i][0] = analogRead(LSOUT1);
-		readTable[i][1] = analogRead(LSOUT2);
-		readTable[i][2] = analogRead(LSOUT3);
-	}
-	for (int j = 0; j < 3; j++) {
-		for (int i = 0; i < 16; i++) {
-			Serial2.print(readTable[i][j]);
-			Serial2.print("\t");
-		}
-		Serial2.println("");
-	}
-	Serial2.println("");Serial2.println("");
-	delay(1000);
-	*/
 }

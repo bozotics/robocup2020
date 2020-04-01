@@ -50,7 +50,6 @@ bool kick = false, mouse = false, cal = false;
 void updateLight();
 byte *processLight();
 void lightCal();
-void recvCalib();
 
 //Serial.h
 int fast_atoi(unsigned char *str);
