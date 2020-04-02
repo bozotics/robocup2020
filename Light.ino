@@ -91,7 +91,7 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 #ifdef DEBUG
 	Serial2.println("Blocking program for Calibration");
 #endif
-	const unsigned long timeout = 60000, sendTime = 500;
+	const unsigned long timeout = 60000, sendTime = 1000;
 	unsigned long timeStart = millis(), sendMillis = millis();
 	int lightMin[40], lightMax[40];
 	for (int i = 0; i < 40; i++)
@@ -111,25 +111,26 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 				else if (lightVals[i] < lightMin[i])
 					lightMin[i] = lightVals[i];
 			}
-			if ((millis() - sendMillis) < sendTime)
+			if ((millis() - sendMillis) > sendTime)
 			{
-				Serial1.print('N');
-				for (int i = 1; i <= 40; i++)
+				Serial1.print('L');
+				for (int i = 0; i < 40; i++)
 				{
 					Serial1.print('/');
-					Serial1.print(i);
+					Serial1.print(i + 1);
 					Serial1.print(',');
-					Serial1.print((lightMax[i - 1] + lightMin[i - 1]) / 2);
+					Serial1.print((lightMax[i] + lightMin[i]) / 2);
 				}
 				Serial1.print('|');
 #ifdef DEBUG
-				for (int i = 1; i <= 40; i++)
+				for (int i = 0; i < 40; i++)
 				{
-					Serial2.print(i);
-					Serial2.print(', Thres:  ');
-					Serial2.println((lightMax[i - 1] + lightMin[i - 1]) / 2);
+					Serial2.print(i + 1);
+					Serial2.print(", Thres:  ");
+					Serial2.println((lightMax[i] + lightMin[i]) / 2);
 				}
 #endif
+				sendMillis = millis();
 			}
 		}
 		if (Serial1.available())
@@ -137,12 +138,13 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 			if (Serial1.read() == 'L')
 			{
 #ifdef DEBUG
-				Serial2.println("finished calib");
+				Serial2.println("finished calibration");
 #endif
-				Serial1.print('N');
+				delay(10);
+				Serial1.print('L');
 				for (int i = 0; i < 40; i++)
 				{
-					lightThres[i] = (lightMax[i - 1] + lightMin[i - 1]) / 2;
+					lightThres[i] = (lightMax[i] + lightMin[i]) / 2;
 					unsigned char Char1; // lower byte
 					unsigned char Char2; // upper byte
 					Char1 = lightThres[i] & 0xFF;
@@ -151,12 +153,12 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 					eeprom_buffered_write_byte(i + 41, Char2);
 
 					Serial1.print('/');
-					Serial1.print(i+1);
+					Serial1.print(i + 1);
 					Serial1.print(',');
 					Serial1.print(lightThres[i]);
 #ifdef DEBUG
-					Serial2.print(i);
-					Serial2.print(', Thres:  ');
+					Serial2.print(i + 1);
+					Serial2.print(", Thres:  ");
 					Serial2.println(lightThres[i]);
 #endif
 				}
