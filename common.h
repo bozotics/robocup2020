@@ -4,6 +4,7 @@
 #include <Arduino.h>
 
 #define DEBUG
+//#define SERIAL_DEBUG
 
 #define DIP1p 24
 #define DIP2p 25

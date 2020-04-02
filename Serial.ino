@@ -35,7 +35,7 @@ void recv(HardwareSerial &_serial)
 			else
 			{
 				receivedChars[ndx] = '\0'; // terminate the string
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 				char s[32];
 				sprintf(s, "%s", receivedChars);
 				Serial.println(s);
@@ -46,7 +46,7 @@ void recv(HardwareSerial &_serial)
 				{
 				case 'L':
 					processLight(receivedChars);
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 					Serial.println("Light data received");
 #endif
 					break;

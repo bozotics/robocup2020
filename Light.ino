@@ -1,12 +1,12 @@
 void processLight(byte *data)
 {
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 	Serial.println("Processing light data...");
 #endif
 	for (int i = 0; i < 40; i++)
 	{
 		light[i] = (data[i / 8] >> (i % 8) & 0x01);
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 		if (light[i])
 		{
 			Serial.print(i);
@@ -14,7 +14,7 @@ void processLight(byte *data)
 		}
 #endif
 	}
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 	Serial.println("");
 #endif
 }
