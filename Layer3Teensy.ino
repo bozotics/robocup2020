@@ -77,5 +77,6 @@ void loop()
 			DIP1.update();
 		}
 		serialWrite(l1Serial, 'L');
+		while (!recvCalib());
 	}
 }

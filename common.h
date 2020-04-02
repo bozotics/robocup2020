@@ -51,4 +51,4 @@ byte receivedChars[32];
 //Light.h
 
 void processLight(byte *data);
-void recvCalib();
+bool recvCalib();
