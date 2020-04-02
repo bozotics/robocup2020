@@ -30,7 +30,7 @@ void setup()
 
 	eeprom_buffer_fill();
 #ifdef DEBUG
-		Serial2.println("Thres loading");
+	Serial2.println("Thres loading");
 #endif
 	for (int i = 1; i <= 40; i++)
 	{
@@ -54,14 +54,11 @@ void loop()
 {
 	serialRead();
 	updateLight();
-	if (lightCnt == 0 && (millis() - debugMil) > 1000)
-	{
+	if (!lightCnt)
 		serialWrite('L', processLight());
-		debugMil = millis();
-	}
 	if (kick && (millis() - kickTimer) > 30)
 	{
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 		Serial2.println("Stop Kick");
 #endif
 		digitalWriteFast(solenoid, 0);

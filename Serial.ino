@@ -18,7 +18,7 @@ void serialRead()
 		switch (rc)
 		{
 		case 'K':
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 			Serial2.println("Kicking...");
 #endif
 			digitalWriteFast(solenoid, 1);
@@ -28,17 +28,14 @@ void serialRead()
 			break;
 
 		case 'N':
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 			Serial2.println("Starting light calibration...");
 #endif
 			lightCal();
-#ifdef DEBUG
-			Serial2.println("Light calibration Ended");
-#endif
 			break;
 
 		case '|':
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 			Serial2.println("Useless delimeter here, fix code pls");
 #endif
 			break;
@@ -60,7 +57,7 @@ void serialWrite(byte type, byte *value)
 	for (int i = 0; i < 5; ++i)
 		Serial1.write(value[i]);
 	Serial1.write('|');
-#ifdef DEBUG
+#ifdef SERIAL_DEBUG
 	Serial2.write(type);
 	for (int i = 0; i < 5; ++i)
 		Serial2.print(value[i], BIN);

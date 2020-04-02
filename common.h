@@ -3,6 +3,7 @@
 #include <HardwareSerial.h>
 
 #define DEBUG
+//#define SERIAL_DEBUG
 
 #define SIG_0 PA_15
 #define SIG_1 PB_3
