@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include <HardwareSerial.h>
+#include <Bounce2.h>
 
 #define DEBUG
 //#define SERIAL_DEBUG
@@ -15,13 +16,14 @@
 #define lightInt PA_11
 
 #define solenoid PA_8
-#define motorSw PC_13
+#define motorSwp PC_13
 
 #define mouseRst PB_9
 #define mouseMot PB_8
 #define mouseSS PA4
 
 HardwareSerial Serial2(PA_3, PA_2);
+Bounce motorSw = Bounce();
 
 const int sigTable[16][4] = {
 	{0, 0, 0, 0}, //0
@@ -48,6 +50,9 @@ unsigned long lightTimer, kickTimer, mouseTimer, debugMil;
 bool kick = false, mouse = false, cal = false;
 
 //Light.h
+/**
+ @brief Reads all the light values.
+*/
 void updateLight();
 byte *processLight();
 void lightCal();
@@ -56,6 +61,7 @@ void lightCal();
 int fast_atoi(unsigned char *str);
 void serialRead();
 void serialWrite(byte type, byte *value);
+void serialWrite(byte type, byte value);
 
 //Mouse.h
 #define Product_ID  0x00

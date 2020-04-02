@@ -19,6 +19,9 @@ void setup()
 	pinMode(pinNametoDigitalPin(solenoid), OUTPUT);
 	digitalWriteFast(solenoid, 0);
 
+	motorSw.attach(motorSwp, INPUT);
+	motorSw.interval(50);
+
 	pinMode(pinNametoDigitalPin(SIG_0), OUTPUT);
 	pinMode(pinNametoDigitalPin(SIG_1), OUTPUT);
 	pinMode(pinNametoDigitalPin(SIG_2), OUTPUT);
@@ -52,10 +55,21 @@ void setup()
 }
 void loop()
 {
+	motorSw.update();
 	serialRead();
 	updateLight();
 	if (!lightCnt)
 		serialWrite('L', processLight());
+	if (motorSw.rose() || digitalReadFast(motorSwp))
+	{
+		serialWrite('N', 1);
+		Serial2.println("motor on");
+	}
+	if (motorSw.fell() || !digitalReadFast(motorSwp))
+	{
+		serialWrite('N', (byte)0);
+		Serial2.println("motor off");
+	}
 	if (kick && (millis() - kickTimer) > 30)
 	{
 #ifdef SERIAL_DEBUG

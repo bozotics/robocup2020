@@ -65,3 +65,18 @@ void serialWrite(byte type, byte *value)
 	Serial2.println("");
 #endif
 }
+
+void serialWrite(byte type, byte value)
+{
+	//char s[20];
+	//sprintf(s, "%c%s|", type, value);
+	Serial1.write(type);
+	Serial1.write(value);
+	Serial1.write('|');
+#ifdef SERIAL_DEBUG
+	Serial2.write(type);
+	Serial2.print(value);
+	//Serial2.write('|');
+	Serial2.println("");
+#endif
+}
