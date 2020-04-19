@@ -1,0 +1,12 @@
+*.step
+*.err
+*dribbler.png
+*.log
+Ambigram/
+ARM/
+LW tests/
+Simulation/
+3D print/
+3D models (archive)/
+*.xlsx
+*.xlsm
