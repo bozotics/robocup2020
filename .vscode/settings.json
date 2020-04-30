@@ -1,9 +1,6 @@
 {
 	"arduino.disableTestingOpen": true,
     "arduino.enableUSBDetection": false,
-	"workbench.colorCustomizations": {
-		"statusBar.background" : "#1a9900"
-	},
 	"files.associations": {
 		"*.s2e": "json",
 		"__bit_reference": "cpp",
