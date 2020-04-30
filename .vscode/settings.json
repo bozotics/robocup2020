@@ -1,7 +1,4 @@
 {
-	"workbench.colorCustomizations": {
-		"statusBar.background" : "#b90000"
-	},
 	"files.associations": {
 		"*.s2e": "json",
 		"__bit_reference": "cpp",
