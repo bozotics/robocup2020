@@ -102,5 +102,7 @@
 		"osutility": "cpp",
 		"__functional_base_03": "cpp",
 		"*.tpp": "cpp"
-	}
+	},
+    "C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/vc.db",
+    "C_Cpp.intelliSenseCachePath": "${workspaceFolder}/.vscode/"
 }
