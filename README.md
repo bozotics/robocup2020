@@ -7,5 +7,6 @@ They can be accessed via the different branches:
 * Layer3Teensy is the main controller; it receives and processes data via UART from the other layers, bluetooth module, and the RasPi (for camera). It then controls the motors directly. 
 * Layer4 controls the light ring, ESC for dribbler and TOF distance sensors 
 * Mechanical contains all the 3D models for the robot
+* PCB contains all the PCB design files for the robot
 - - - -
-Do follow us and contact us at [@bozotics](https://www.instagram.com/bozotics/) for any queries! Also do check out our website at <https://robo.infocommsociety.com/>
+Do follow us and contact us at [@bozotics](https://www.instagram.com/bozotics/) for any queries! Also do check out our **new** website at <https://bozo.infocommsociety.com/>
