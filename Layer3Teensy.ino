@@ -34,13 +34,14 @@ void setup()
 	analogWriteFrequency(PWMM3, 14648.437);
 	analogWriteFrequency(PWMM4, 14648.437);
 
-	while(l1Serial.available())
+	while (l1Serial.available())
 		char t = l1Serial.read();
 }
 
 void loop()
 {
 	recv(l1Serial);
+	recv(l3Serial);
 
 	analogWrite(PWMM1, 0);
 	analogWrite(PWMM2, 0);
@@ -54,7 +55,7 @@ void loop()
 		if (batt.hasChanged())
 		{
 			Serial.print("Battery Level: \t");
-			Serial.println((float)(batt.getValue()/77.5));
+			Serial.println((float)(batt.getValue() / 77.5));
 		}
 		battTime = 0;
 	}
@@ -77,6 +78,7 @@ void loop()
 			DIP1.update();
 		}
 		serialWrite(l1Serial, 'L');
-		while (!recvCalib());
+		while (!recvCalib())
+			;
 	}
 }

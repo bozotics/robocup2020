@@ -37,7 +37,7 @@ Bounce DIP4 = Bounce();
 
 elapsedMillis battTime = 0, DIPTime = 0, sTimeout = 0;
 bool light[40] = {0}, motorOn = false;
-int lightThres[40], lightMax[40] = {0}, lightMin[40] /* = max */ , lightTemp;
+int lightThres[40], lightMax[40] = {0}, lightMin[40] /* = max */, lightTemp;
 
 //Serial.h
 
@@ -53,3 +53,7 @@ byte receivedChars[32];
 
 void processLight(byte *data);
 bool recvCalib();
+
+//IMU.h
+float cmpangle;
+void readIMU(byte *data);
