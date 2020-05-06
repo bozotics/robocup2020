@@ -1,5 +1,5 @@
 #include "common.h"
-#define DEBUG
+//#define DEBUG
 
 void setup()
 {
@@ -13,7 +13,6 @@ void setup()
 	imu.begin();
 	filter.begin(100); // 100 measurements per second
 }
-unsigned long time;
 void loop()
 {
 	float ax, ay, az;
@@ -36,8 +35,6 @@ void loop()
 		char s[20];
 		dtostrf(heading, 4, 2, s);
 		serialWrite('C', s);
-		Serial2.println(micros() - time);
-		time = micros();
 	}
 }
 

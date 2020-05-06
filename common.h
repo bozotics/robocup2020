@@ -8,3 +8,4 @@ NXPMotionSense imu;
 Madgwick filter;
 
 HardwareSerial Serial2(PA3, PA2);
+void serialWrite(unsigned char type, char *value);
