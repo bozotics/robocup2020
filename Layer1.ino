@@ -60,12 +60,12 @@ void loop()
 	updateLight();
 	if (!lightCnt)
 		serialWrite('L', processLight());
-	if (motorSw.rose() || digitalReadFast(motorSwp))
+	if (motorSw.rose())
 	{
 		serialWrite('N', 1);
 		Serial2.println("motor on");
 	}
-	if (motorSw.fell() || !digitalReadFast(motorSwp))
+	if (motorSw.fell())
 	{
 		serialWrite('N', (byte)0);
 		Serial2.println("motor off");

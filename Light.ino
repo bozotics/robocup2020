@@ -102,7 +102,7 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 	while ((millis() - timeStart) < timeout)
 	{
 		updateLight();
-		if (lightCnt == 0)
+		if (!lightCnt)
 		{
 			for (int i = 0; i < 40; i++)
 			{

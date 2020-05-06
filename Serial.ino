@@ -14,7 +14,7 @@ void serialRead()
 	while (Serial1.available() > 0)
 	{
 		rc = Serial1.read();
-		
+
 		switch (rc)
 		{
 		case 'K':
