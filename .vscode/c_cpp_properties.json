@@ -1,24 +1,27 @@
 {
+    "env": {
+        "Arduino_Core_STM32_version": "1.9.0"
+    },
     "configurations": [
         {
             "name": "Mac",
             "includePath": [
                 "${workspaceRoot}",
                 "/Users/JH/Documents/Arduino/libraries/**",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/libraries/**",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino/stm32",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino/stm32/LL",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/variants/MAPLEMINI_F103CB",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/system/STM32F1xx",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/system/Drivers/STM32F1xx_HAL_Driver/Src",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/system/Drivers/STM32F1xx_HAL_Driver/Inc",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/libraries/**",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32/LL",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/variants/MAPLEMINI_F103CB",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/STM32F1xx",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Src",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates",
                 "/Users/JH/Library/Arduino15/packages/STM32/tools/**"
             ],
             "forcedInclude": [
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/1.8.0/cores/arduino/Arduino.h",
+                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/Arduino.h",
                 "common.h"
             ],
             "browse": {
@@ -43,20 +46,20 @@
             "includePath": [
                 "${workspaceRoot}",
                 "C:\\Users\\JH\\Documents\\Arduino\\libraries\\**",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\libraries\\**",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\cores\\arduino",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\cores\\arduino\\stm32",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\cores\\arduino\\stm32\\LL",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\variants\\MAPLEMINI_F103CB",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\system\\STM32F1xx",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\system\\Drivers\\STM32F1xx_HAL_Driver\\Src",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\system\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source\\Templates",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\libraries\\**",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32\\LL",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\variants\\MAPLEMINI_F103CB",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\STM32F1xx",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source\\Templates",
                 "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\**"
             ],
             "forcedInclude": [
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\1.8.0\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\Arduino.h",
                 "common.h"
             ],
             "browse": {
