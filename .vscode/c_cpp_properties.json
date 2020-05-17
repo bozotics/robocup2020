@@ -24,7 +24,7 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
             },
-            "intelliSenseMode": "clang-x64",
+            "intelliSenseMode": "gcc-arm",
             "compilerPath": "/Users/JH/Library/Arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
@@ -62,7 +62,7 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
             },
-            "intelliSenseMode": "${default}",
+            "intelliSenseMode": "gcc-arm",
             "compilerPath": "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\xpack-arm-none-eabi-gcc\\9.2.1-1.1\\bin\\arm-none-eabi-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
