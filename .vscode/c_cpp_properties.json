@@ -7,28 +7,28 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceRoot}",
-                "/Users/JH/Documents/Arduino/libraries/**",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/libraries/**",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32/LL",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/variants/MAPLEMINI_F103CB",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/STM32F1xx",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Src",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Inc",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates",
-                "/Users/JH/Library/Arduino15/packages/STM32/tools/**"
+                "~/Documents/Arduino/libraries/**",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/libraries/**",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/stm32/LL",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/variants/MAPLEMINI_F103CB",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/STM32F1xx",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Src",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates",
+                "~/Library/Arduino15/packages/STM32/tools/**"
             ],
             "forcedInclude": [
-                "/Users/JH/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/Arduino.h",
+                "~/Library/Arduino15/packages/STM32/hardware/stm32/${Arduino_Core_STM32_version}/cores/arduino/Arduino.h",
                 "common.h"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
             },
             "intelliSenseMode": "gcc-arm",
-            "compilerPath": "/Users/JH/Library/Arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gcc",
+            "compilerPath": "~/Library/Arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "defines": [
@@ -45,28 +45,28 @@
             "name": "Windows",
             "includePath": [
                 "${workspaceRoot}",
-                "C:\\Users\\JH\\Documents\\Arduino\\libraries\\**",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\libraries\\**",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32\\LL",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\variants\\MAPLEMINI_F103CB",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\STM32F1xx",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Src",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source\\Templates",
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\**"
+                "C:\\Users\\${env:USERNAME}\\Documents\\Arduino\\libraries\\**",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\libraries\\**",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\stm32\\LL",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\variants\\MAPLEMINI_F103CB",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\STM32F1xx",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\system\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source\\Templates",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\**"
             ],
             "forcedInclude": [
-                "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\hardware\\stm32\\${Arduino_Core_STM32_version}\\cores\\arduino\\Arduino.h",
                 "common.h"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
             },
             "intelliSenseMode": "gcc-arm",
-            "compilerPath": "C:\\Users\\JH\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\xpack-arm-none-eabi-gcc\\9.2.1-1.1\\bin\\arm-none-eabi-gcc",
+            "compilerPath": "C:\\Users\\${env:USERNAME}\\AppData\\Local\\Arduino15\\packages\\STM32\\tools\\xpack-arm-none-eabi-gcc\\9.2.1-1.1\\bin\\arm-none-eabi-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "defines": [
