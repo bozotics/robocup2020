@@ -10,3 +10,6 @@ Simulation/
 3D models (archive)/
 *.xlsx
 *.xlsm
+*.dwl
+*.dwl2
+*.bak
