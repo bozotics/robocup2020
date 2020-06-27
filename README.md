@@ -8,5 +8,6 @@ They can be accessed via the different branches:
 * Layer4 controls the light ring, ESC for dribbler and TOF distance sensors 
 * Mechanical contains all the 3D models for the robot
 * PCB contains all the PCB design files for the robot
+* PCB-3dModel contains broken PCB design files which were only made to export a 3d model, do use the "PCB" branch instead.
 - - - -
 Do follow us and contact us at [@bozotics](https://www.instagram.com/bozotics/) for any queries! Also do check out our **new** website at <https://bozo.infocommsociety.com/>
