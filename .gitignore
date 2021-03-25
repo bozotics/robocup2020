@@ -1,0 +1,10 @@
+.DS_Store
+*/.DS_Store
+build
+*.elf
+*.hex
+*.bin
+.vscode
+!.vscode/c_cpp_properties.json
+!.vscode/settings.json
+!.vscode/tasks.json
