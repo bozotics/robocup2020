@@ -9,6 +9,7 @@ void setup()
 #endif
 	L1Serial.begin(250000);
 	L3Serial.begin(250000);
+	L4Serial.begin(250000);
 	piSerial.begin(1000000);
 
 	DIP1.attach(DIP1p, INPUT);
@@ -46,6 +47,10 @@ void loop()
 {
 	//recv(L1Serial);
 	//recv(L3Serial);
+	L4Serial.write('1');
+	delay(1000);
+	L4Serial.write('2');
+	delay(10000);
 	//piRecv();
 	//calcRobotAngle();
 	angular_drive(0, 0, 0);
