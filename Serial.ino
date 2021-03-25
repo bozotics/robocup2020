@@ -102,6 +102,49 @@ void recv(HardwareSerial &_serial)
 	}
 }
 
+void piRecv() {
+	if (piSerial.available()) {
+		buf[cnt] = piSerial.read();
+		cnt++;
+		if (buf[cnt-1] == 'e') {	//terminated string
+			char *token;
+			int cnt2 = 0;
+			//Serial.print(buf); Serial.print("gg");
+			if(buf[0]=='B') {
+				//Serial.print(buf);
+				const char s[4] = " BP";
+				token = strtok(buf, s);	//get first token
+				/* walk through other tokens */
+				while( token != NULL ) {
+					ballPos[cnt2] = atoi(token);
+					token = strtok(NULL, s);
+					cnt2++;
+				}
+				//fix rotated 90 deg shit
+				ballAng = mod(ballAng-90,360);
+				predAng = mod(predAng-90,360);
+				lastBallTime = millis();
+				//Serial.println(robotAng);
+			}
+			else if(buf[0]=='b') {
+				const char s[4] = " by";
+				token = strtok(buf, s);	//get first token
+				/* walk through other tokens */
+				while( token != NULL ) {
+					goalPos[cnt2] = atoi(token);
+					//Serial.print(goalPos[cnt2]); Serial.print(";")
+					token = strtok(NULL, s);
+					cnt2++;
+				}
+				//Serial.print(mod(360-blueAng,360)); Serial.print(" "); Serial.println(mod(360-yellowAng,360));
+			}
+			memset(buf,0,sizeof(buf));
+			cnt=0;
+			//Serial.println();
+		}
+	}
+}
+
 void serialWrite(HardwareSerial &_serial, byte type, byte *value)
 {
 	char s[20];

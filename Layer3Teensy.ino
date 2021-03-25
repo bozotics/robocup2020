@@ -2,14 +2,14 @@
 
 void setup()
 {
-	l3Serial.setTX(1);
-	l3Serial.setRX(0);
+	L3Serial.setTX(1);
+	L3Serial.setRX(0);
 #ifdef DEBUG
 	Serial.begin(115200);
 #endif
-	l1Serial.begin(250000);
-	l3Serial.begin(250000);
-	piSerial.begin(500000);
+	L1Serial.begin(250000);
+	L3Serial.begin(250000);
+	piSerial.begin(1000000);
 
 	DIP1.attach(DIP1p, INPUT);
 	DIP2.attach(DIP2p, INPUT);
@@ -34,19 +34,23 @@ void setup()
 	analogWriteFrequency(PWMM3, 14648.437);
 	analogWriteFrequency(PWMM4, 14648.437);
 
-	while (l1Serial.available())
-		char t = l1Serial.read();
+	while (L1Serial.available())
+		char t = L1Serial.read();
 }
+
+char buf[255];
+int cnt=0;
+unsigned long lastBallTime = millis();
 
 void loop()
 {
-	recv(l1Serial);
-	recv(l3Serial);
+	//recv(L1Serial);
+	//recv(L3Serial);
+	//piRecv();
+	//calcRobotAngle();
+	angular_drive(0, 0, 0);
+	move_OUT();
 
-	analogWrite(PWMM1, 0);
-	analogWrite(PWMM2, 0);
-	analogWrite(PWMM3, 0);
-	analogWrite(PWMM4, 0);
 
 #ifdef DEBUG
 	if (battTime >= 1000)
@@ -71,13 +75,13 @@ void loop()
 #ifdef DEBUG
 		Serial.println("Running LS Cal...");
 #endif
-		serialWrite(l1Serial, 'N');
+		serialWrite(L1Serial, 'N');
 		while (!DIP1.rose())
 		{
 			recvCalib();
 			DIP1.update();
 		}
-		serialWrite(l1Serial, 'L');
+		serialWrite(L1Serial, 'L');
 		while (!recvCalib())
 			;
 	}

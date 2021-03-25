@@ -25,9 +25,9 @@ bool recvCalib()
 	static int ndx = 0, i = 0;
 	const byte endMarker = '|', startMarker = 'L', separator = ',', separator2 = '/'; // format L/0,300/1,200/2,900/.../39,200|
 	byte rc;
-	while (l1Serial.available())
+	while (L1Serial.available())
 	{
-		rc = l1Serial.read();
+		rc = L1Serial.read();
 		if (recvInProgress == true)
 		{
 			if (rc == separator2 && !i)

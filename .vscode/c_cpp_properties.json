@@ -61,6 +61,21 @@
                 "LAYOUT_US_ENGLISH",
                 "ARDUINO=10812"
             ]
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\Kai Cong\\Documents\\Arduino\\libraries\\**",
+                "C:\\Program Files (x86)\\Arduino\\libraries\\**",
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\sam\\1.6.12\\**"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\sam\\1.6.12\\cores\\arduino\\Arduino.h"
+            ],
+            "defines": [
+                "USBCON"
+            ]
         }
     ],
     "version": 4

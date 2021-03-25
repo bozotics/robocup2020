@@ -11,23 +11,36 @@
 #define DIP3p 26
 #define DIP4p 27
 
-#define PWMM1 35
-#define PWMM2 36
-#define PWMM3 37
-#define PWMM4 38
-#define INM1 12
-#define INM2 11
+#define PWMM1 38  //FL
+#define PWMM2 35  //FR
+#define PWMM3 37  //BL
+#define PWMM4 36  //BR
+#define INM1 14
+#define INM2 12
 #define INM3 13
-#define INM4 14
+#define INM4 11
 
-#define l3Serial Serial1
-#define l1Serial Serial5
+#define L3Serial Serial1
+#define L1Serial Serial5
 #define piSerial Serial4
 #define btSerial Serial3
-#define l4Serial Serial2
+#define L4Serial Serial2
 
 #define lightInt 39
 #define battLvl A1
+
+#define ballDist ballPos[0]
+#define ballAng  ballPos[1]
+#define predDist ballPos[2]
+#define predAng  ballPos[3]
+
+#define blueDist goalPos[0]
+#define blueAng  goalPos[1]
+#define yellowDist  goalPos[2]
+#define yellowAng   goalPos[3]
+
+#define pi 3.1415926535897932384626433832795
+#define e  2.7182818284590452353602874713527
 
 ResponsiveAnalogRead batt(battLvl, false);
 Bounce DIP1 = Bounce();
@@ -57,3 +70,11 @@ bool recvCalib();
 //IMU.h
 float cmpangle;
 void readIMU(byte *data);
+
+//camera.h
+int ballPos[4] = {0,0,0,0};
+int goalPos[4] = {0,0,0,0};
+
+//movement.h
+int FLout=0, FRout=0, BLout=0, BRout=0;
+float robotAng=0;
