@@ -16,6 +16,8 @@ void setup() {
     frontDrib.writeMicroseconds(700);
     backDrib.attach(ESC_2);
     backDrib.writeMicroseconds(700);
+    delay(1000);
+    digitalWrite(LED_BUILTIN, 0);
 }
 
 char buf;
@@ -38,4 +40,8 @@ void loop() {
             backDrib.writeMicroseconds(700);
         }
     }
+    // frontDrib.writeMicroseconds(2000);
+    // delay(5000);
+    // frontDrib.writeMicroseconds(700);
+    // delay(5000);
 }
