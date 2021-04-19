@@ -1,18 +1,20 @@
-void updateLight()
+void updateLight(bool calib)
 {
-	if (micros() - lightTimer > 70)
+	if (micros() - lightTimer > 100)
 	{
-		lightVals[20 - lightCnt] = analogRead(ALOG_1);
-		lightVals[lightCnt <= 4 ? 4 - lightCnt : 40 - lightCnt] = analogRead(ALOG_2);
-		int tempAnalog = analogRead(ALOG_3);
+		int tempAnalog = analogRead(ALOG_1);
+		if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[20 - lightCnt] = analogRead(ALOG_1);
+		tempAnalog = analogRead(ALOG_2);
+		if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[lightCnt <= 4 ? 4 - lightCnt : 40 - lightCnt] = analogRead(ALOG_2);
+		tempAnalog = analogRead(ALOG_3);
 		switch (lightCnt)
 		{
 		case 0:
-			lightVals[39] = tempAnalog;
+			if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[39] = tempAnalog;
 			break;
 
 		case 5:
-			lightVals[37] = tempAnalog;
+			if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[37] = tempAnalog;
 			break;
 
 		case 6:
@@ -32,7 +34,7 @@ void updateLight()
 			break;
 
 		case 10:
-			lightVals[38] = tempAnalog;
+			if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[38] = tempAnalog;
 			break;
 
 		case 11:
@@ -40,7 +42,7 @@ void updateLight()
 			break;
 
 		case 12:
-			lightVals[36] = tempAnalog;
+			if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[36] = tempAnalog;
 			break;
 
 		case 13:
@@ -56,7 +58,7 @@ void updateLight()
 			break;
 
 		default:
-			lightVals[lightCnt + 20] = tempAnalog;
+			if (tempAnalog > LIGHT_MIN_CUTOFF) lightVals[lightCnt + 20] = tempAnalog;
 			break;
 		}
 
@@ -68,6 +70,12 @@ void updateLight()
 		digitalWriteFast(SIG_3, sigTable[lightCnt][3]);
 
 		lightTimer = micros();
+	}
+	if (calib) {
+		for (int i = 0; i < 40; i++) {
+			if (lightVals[i] > lightMax[i]) lightMax[i] = lightVals[i];
+			else if (lightVals[i] < lightMin[i]) lightMin[i] = lightVals[i];
+		}
 	}
 }
 
@@ -93,24 +101,24 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 #endif
 	const unsigned long timeout = 60000, sendTime = 1000;
 	unsigned long timeStart = millis(), sendMillis = millis();
-	int lightMin[40], lightMax[40];
 	for (int i = 0; i < 40; i++)
 	{
 		lightMin[i] = 1200;
 		lightMax[i] = 0;
+		lightVals[i] = 100;
 	}
 	while ((millis() - timeStart) < timeout)
 	{
-		updateLight();
+		updateLight(true);
 		if (!lightCnt)
 		{
-			for (int i = 0; i < 40; i++)
-			{
-				if (lightVals[i] > lightMax[i])
-					lightMax[i] = lightVals[i];
-				else if (lightVals[i] < lightMin[i])
-					lightMin[i] = lightVals[i];
-			}
+			// for (int i = 0; i < 40; i++)
+			// {
+			// 	if (lightVals[i] > lightMax[i])
+			// 		lightMax[i] = lightVals[i];
+			// 	else if (lightVals[i] < lightMin[i])
+			// 		lightMin[i] = lightVals[i];
+			// }
 			if ((millis() - sendMillis) > sendTime)
 			{
 				Serial1.print('L');
@@ -127,7 +135,7 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 				{
 					Serial2.print(i + 1);
 					Serial2.print(", Thres:  ");
-					Serial2.println((lightMax[i] + lightMin[i]) / 2);
+					Serial2.println((lightMax[i] + lightMin[i]) / 2);	//weighted average higher than mid point
 				}
 #endif
 				sendMillis = millis();
@@ -142,9 +150,12 @@ void lightCal() // format L/0,300/1,200/2,900/.../39,200|
 #endif
 				delay(10);
 				Serial1.print('L');
+				//this for manually calc threshold
+				int lightThresManual[40] = {323,276,281,245,212,215,237,271,243,271,253,244,248,228,275,273,241,262,285,282,327,223,211,246,273,321,334,278,227,248,247,217,257,286,299,286,142,159,900,900};
 				for (int i = 0; i < 40; i++)
 				{
-					lightThres[i] = (lightMax[i] + lightMin[i]) / 2;
+					//lightThres[i] = (lightMax[i] + lightMin[i]) / 2;	//weighted average higher than mid point
+					lightThres[i] = lightThresManual[i];	//manually calculated
 					unsigned char Char1; // lower byte
 					unsigned char Char2; // upper byte
 					Char1 = lightThres[i] & 0xFF;

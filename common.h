@@ -23,7 +23,6 @@
 #define mouseSS PA4
 
 HardwareSerial Serial2(PA_3, PA_2);
-Bounce motorSw = Bounce();
 
 const int sigTable[16][4] = {
 	{0, 0, 0, 0}, //0
@@ -45,6 +44,7 @@ const int sigTable[16][4] = {
 };
 
 int lightThres[40] = {0};
+int lightMin[40], lightMax[40];
 int lightCnt = 0, lightVals[40], lightDetect[40], thermVals[4], csVals[4];
 unsigned long lightTimer, kickTimer, mouseTimer, debugMil;
 bool kick = false, mouse = false, cal = false;
@@ -53,6 +53,7 @@ bool kick = false, mouse = false, cal = false;
 /**
  @brief Reads all the light values.
 */
+#define LIGHT_MIN_CUTOFF 70
 void updateLight();
 byte *processLight();
 void lightCal();
