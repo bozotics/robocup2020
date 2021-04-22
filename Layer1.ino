@@ -16,26 +16,14 @@ void setup()
 	SPI.setSCLK(PA_5);
 	SPI.beginTransaction(mouseSS, SPISettings(2000000, MSBFIRST, SPI_MODE3));
 
-	Serial2.println("HERE1");
-	delay(1000);
-
 	pinMode(LED_BUILTIN, OUTPUT);
 	digitalWrite(LED_BUILTIN, 1);
-
-	Serial2.println("HERE2");
-	delay(1000);
 
 	pinMode(pinNametoDigitalPin(solenoid), OUTPUT);
 	digitalWriteFast(solenoid, 0);
 
 	motorSw.attach(pinNametoDigitalPin(motorSwp), INPUT);
-	Serial2.println("HERE3");
-	delay(1000);
-
 	motorSw.interval(50);
-
-	Serial2.println("HERE4");
-	delay(1000);
 
 	pinMode(pinNametoDigitalPin(SIG_0), OUTPUT);
 	pinMode(pinNametoDigitalPin(SIG_1), OUTPUT);
@@ -45,8 +33,7 @@ void setup()
 	digitalWriteFast(SIG_1, 0);
 	digitalWriteFast(SIG_2, 0);
 	digitalWriteFast(SIG_3, 0);
-	Serial2.println("HERE5");
-	delay(1000);
+	delay(500);
 	eeprom_buffer_fill();
 #ifdef DEBUG
 	Serial2.println("Thres loading");
