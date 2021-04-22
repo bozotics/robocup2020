@@ -8,11 +8,16 @@
                 "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/cores/teensy3/**",
                 "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/**",
                 "/Applications/Teensyduino.app/Contents/Java/hardware/tools/arm/**",
-                "/Users/JH/Documents/Arduino/libraries/**"
+                "/Users/JH/Documents/Arduino/libraries/**",
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\sam\\1.6.12\\**",
+                "C:\\Program Files (x86)\\Arduino\\libraries\\**",
+                "C:\\Users\\Kai Cong\\Documents\\Arduino\\libraries\\**",
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**"
             ],
             "forcedInclude": [
                 "/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/cores/teensy3/Arduino.h",
-                "common.h"
+                "common.h",
+                "C:\\Users\\Kai Cong\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\sam\\1.6.12\\cores\\arduino\\Arduino.h"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
@@ -28,7 +33,8 @@
                 "F_CPU=120000000",
                 "ARDUINO_TEENSY35",
                 "LAYOUT_US_ENGLISH",
-                "ARDUINO=10812"
+                "ARDUINO=10812",
+                "USBCON"
             ]
         },
         {

@@ -19,8 +19,8 @@ void calcRobotAngle() {
         }
 
         robotAng = ballAng + ballOffset*ballMult;
-        Serial.print(ballAng); Serial.print(" "); Serial.println(ballOffset);
-        angular_drive(1200,robotAng, blueAng<=180 ? -blueAng/18 : -(blueAng-360)/18);
+        //Serial.print(ballAng); Serial.print(" "); Serial.println(ballOffset);
+        angular_drive(robotSpeed,robotAng, blueAng<=180 ? -blueAng/18 : -(blueAng-360)/18);
 	}
 }
 
@@ -38,12 +38,12 @@ void angular_drive(int speed, float angle, float angVel) {
   FLout = round(fl*speed);
   FRout = round(fr*speed);
   BLout = round(bl*speed);
-  BRout = round(br*speed);
+  BRout = round(br*speed);  
 }
 
 void move_OUT() {
-analogWrite(PWMM1,abs(FLout));
-  digitalWriteFast(INM1, (FLout>0 ? LOW : HIGH));
+  analogWrite(PWMM1,abs(FLout));
+  digitalWriteFast(INM1, (FLout>0 ? HIGH : LOW));
 
   analogWrite(PWMM2,abs(FRout));
   digitalWriteFast(INM2, (FRout>0 ? HIGH : LOW));
@@ -53,9 +53,4 @@ analogWrite(PWMM1,abs(FLout));
 
   analogWrite(PWMM4,abs(BRout));
   digitalWriteFast(INM4, (BRout>0 ? LOW : HIGH));
-}
-
-float mod(float x, float y) {
-  x = fmod(x,y);
-  return x < 0 ? x+y : x;
 }

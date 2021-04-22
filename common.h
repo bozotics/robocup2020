@@ -1,4 +1,5 @@
 #include <ResponsiveAnalogRead.h>
+//#include "C:/Program Files (x86)/Arduino/hardware/teensy/avr/libraries/Bounce2/Bounce2.h"   //temp fix for bounce2 conflict between arduino and teensy lib
 #include <Bounce2.h>
 #include <HardwareSerial.h>
 #include <Arduino.h>
@@ -48,21 +49,25 @@ Bounce DIP2 = Bounce();
 Bounce DIP3 = Bounce();
 Bounce DIP4 = Bounce();
 
+bool motorOn = false;
+
 elapsedMillis battTime = 0, DIPTime = 0, sTimeout = 0;
-bool light[40] = {0}, motorOn = false;
-int lightThres[40], lightMax[40] = {0}, lightMin[40] /* = max */, lightTemp;
 
 //Serial.h
-
 int fast_atoi(byte *str);
 void recv(HardwareSerial &_serial);
 void serialWrite(HardwareSerial &_serial, byte type, byte *value);
 void serialWrite(HardwareSerial &_serial, char type, char value);
 void serialWrite(HardwareSerial &_serial, char type);
 
-byte receivedChars[32];
+byte receivedChars[50];
 
 //Light.h
+int lightThres[40], lightMax[40] = {0}, lightMin[40] /* = max */, lightTemp;
+
+float line[40] = {0}, lineAng, prevLineAng, lineLen;
+bool onLine=false, prevLine=false;
+unsigned long lastLineTime=0;
 
 void processLight(byte *data);
 bool recvCalib();
@@ -72,9 +77,33 @@ float cmpangle;
 void readIMU(byte *data);
 
 //camera.h
-int ballPos[4] = {0,0,0,0};
-int goalPos[4] = {0,0,0,0};
+int ballPos[12] = {0,0,0,0,0,0,0,0,0,0,0,0}; //EXTRA 6 array slots temp fix for other data being sent at same time as ball data
+int goalPos[12] = {0,0,0,0,0,0,0,0,0,0,0,0};          //^^
 
 //movement.h
 int FLout=0, FRout=0, BLout=0, BRout=0;
+int robotSpeed=1200;
 float robotAng=0;
+
+//solenoid.h and dribbler.h
+unsigned long kickTimer=-9999, dribblerTimer=0;
+bool dribblerOn = false;
+
+//math.h
+float mod(float x, float y) {
+  x = fmod(x,y);
+  return x < 0 ? x+y : x;
+}
+
+float angleBetween(float x, float y) {
+  return mod((y-x),360);
+}
+
+float smallestAngleBetween(float x, float y) {
+  float ang = angleBetween(x,y);
+  return fmin(ang,360-ang);
+}
+
+float midAngleBetween(float x, float y) {
+  return mod(x + angleBetween(x,y)/2.0, 360);
+}
