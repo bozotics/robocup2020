@@ -1,7 +1,6 @@
 ## PCB Design Files
 
-View .sch and .brd files interactively on [Inventhub!](https://inventhub.io/bozotics/robocup2020/tree/master?isGitHub=true)  
-Once on the website, change the branch to "PCB" (the direct link to the branch does not seem to work) and you can browse around to view any .sch and .brd files right in the browser.
+View .sch and .brd files interactively on [Inventhub!](https://inventhub.io/c/bozotics/robocup2020/tree/PCB)   
 
 Included in this repo are design files for the various PCBs we use. We designed these in EAGLE thanks to [Autodesk's free education licences](https://www.autodesk.com/education/free-software/featured). 
 
