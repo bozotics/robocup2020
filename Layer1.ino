@@ -11,10 +11,10 @@ void setup()
 #endif
 	Serial1.begin(250000);
 
-	SPI.setMOSI(PA_7);
-	SPI.setMISO(PA_6);
-	SPI.setSCLK(PA_5);
-	SPI.beginTransaction(mouseSS, SPISettings(2000000, MSBFIRST, SPI_MODE3));
+//	SPI.setMOSI(PA_7);
+//	SPI.setMISO(PA_6);
+//	SPI.setSCLK(PA_5);
+//	SPI.beginTransaction(mouseSS, SPISettings(2000000, MSBFIRST, SPI_MODE3));
 
 	pinMode(LED_BUILTIN, OUTPUT);
 	digitalWrite(LED_BUILTIN, 1);
@@ -52,8 +52,9 @@ void setup()
 		Serial2.println(lightThres[i - 1]);
 #endif
 	}
-
+  digitalWrite(LED_BUILTIN, 0);
 	lightTimer = micros();
+	mouseTimer = micros();
 	debugMil = millis();
 }
 void loop()
@@ -81,4 +82,16 @@ void loop()
 		digitalWriteFast(solenoid, 0);
 		kick = false;
 	}
+
+//	if (micros() - mouseTimer > 10000) {
+//		write_reg(Motion, 0x01);
+//    	read_reg(Motion);
+//
+//		int Xdat = (int)read_reg(Delta_X_L);
+//    	int Ydat = (int)read_reg(Delta_Y_L);
+//		if(Xdat & 0x80) Xdat = -1 * ((Xdat ^ 0xff) + 1);
+//		if(Ydat & 0x80) Ydat = -1 * ((Xdat ^ 0xff) + 1);
+//		Serial2.print("lmao");Serial2.print(Xdat);Serial2.print(" ");Serial2.println(Ydat);
+//		mouseTimer = micros();
+//	}
 }

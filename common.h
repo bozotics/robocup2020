@@ -2,9 +2,13 @@
 #include <SPI.h>
 #include <HardwareSerial.h>
 #include <Bounce2.h>
+#include <EEPROM.h>
 
 #define DEBUG
 //#define SERIAL_DEBUG
+
+#define whitebot
+//#define blackbot
 
 #define SIG_0 PA_15
 #define SIG_1 PB_3
