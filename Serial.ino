@@ -8,195 +8,182 @@ int fast_atoi(byte *str)
 	return val;
 }
 
-void recv(HardwareSerial &_serial)
+void recv(HardwareSerial &_serial, int serNum)
 {
 	static boolean recvInProgress = false;
-	static int ndx = 0;
-	static byte rc, startPos;
-
-	//for pi serial
-	char *token;
-	int cnt = 0;
-	const char s[7] = " BPbyf";
+	static byte rc;
 
 	const char endMarker = '|', separator = ',', separator2 = '/';
-	const char startMarker[] = {'L', 'S', 'T', 'N', 'M', 'C', 'B', 'P', 'b', 'y', 'f'};
-	// above is {light, current sense, temp, motor switch, mouse, compass, BALL, PREDICTED, BLUE GOAL, YELLOW GOAL, FIELD}
-	while (_serial.available() > 0)
-	{	
-		Serial.print('+');Serial.print(_serial.available());Serial.print(',');
+	const char startMarker[] = {'L', 'S', 'T', 'N', 'M', 'C', 'X', 'B', 'P', 'b', 'y', 'f'};
+	// above is {light, current sense, TOF, motor switch, mouse, compass, bluetooth, BALL, PREDICTED, BLUE GOAL, YELLOW GOAL, FIELD}
+
+	while(_serial.available() > 0) {
 		rc = _serial.read();
-		Serial.write(rc);
-		if (recvInProgress == true)
-		{
-			if (rc != endMarker || (startPos == 'L' && ndx < 5))
-			{
-				receivedChars[ndx] = rc;
-				ndx++;
-				if (ndx >= sizeof(receivedChars))
-				{
-#ifdef DEBUG
-					Serial.println("Too many chars!");
-#endif
-					ndx = sizeof(receivedChars) - 1;
-				}
+		if(ndx[serNum] > 0) {
+			if (rc != endMarker || (receivedChars[serNum][0] == 'L' && ndx[serNum] < 5)) {	//second cond is to prevent '|' light data byte from reading as delimiter		
+				receivedChars[serNum][ndx[serNum]] = rc;
+				//Serial.print(receivedChars[serNum][ndx[serNum]]); Serial.print(";");Serial.print(ndx[serNum]);
+				ndx[serNum]++;
 			}
-			else
-			{
-				receivedChars[ndx] = '\0'; // terminate the string
-				
-#ifdef SERIAL_DEBUG
-				char s[32];
-				sprintf(s, "%s", receivedChars);
-				Serial.println(s);
-#endif
-				recvInProgress = false;
-				int numChars = ndx;
-				ndx = 0;
-				Serial.println();
-				switch (startPos)
-				{
-				case 'L':
-					if (numChars==5) {	//temp fix for overlapping received chars problem
-						processLight(receivedChars);
-						processLine();
-					} else {
-						Serial.println("loser");
-					}
-#ifdef SERIAL_DEBUG
-					Serial.println("Light data received");
-#endif
-					break;
+			else {	//rc is endMarker or light received 5 bytes
+				receivedChars[serNum][ndx[serNum]] = '\0';
+				processRecv(serNum);
 
-				case 'S':
-					break;
-
-				case 'T':
-					break;
-
-				case 'N':
-					if (fast_atoi(receivedChars))
-					{
-						motorOn = true;
-#ifdef DEBUG
-						Serial.println("Motor switch on");
-#endif
-					}
-					else
-					{
-						motorOn = false;
-#ifdef DEBUG
-						Serial.println("Motor switch off");
-#endif
-					}
-
-					break;
-
-				case 'M':
-					break;
-
-				case 'C':
-					readIMU(receivedChars);
-					break;
-
-				case 'B':	//BALL + PREDICTED
-					token = strtok((char *)receivedChars, s);	//get first token
-					/* walk through other tokens */
-					while( token != NULL ) {
-						ballPos[cnt] = atoi(token);
-						token = strtok(NULL, s);
-						cnt++;
-					}
-					//fix rotated 90 deg shit
-					ballAng = mod(ballAng-90,360);
-					predAng = mod(predAng-90,360);
-					//Serial.print(ballAng); Serial.print(";");
-					//Serial.print(ballDist); Serial.println(";");
-					lastBallTime = millis();
-					break;
-
-				case 'P':	//PREDICTED only
-					break;
-				
-				case 'b':	//BLUE + YELLOW
-					token = strtok((char *)receivedChars, s);	//get first token
-					/* walk through other tokens */
-					while( token != NULL ) {
-						goalPos[cnt] = atoi(token);
-						//Serial.print(goalPos[cnt2]); Serial.print(";")
-						token = strtok(NULL, s);
-						cnt++;
-					}
-					break;
-
-				case 'y':	//YELLOW only
-					break;
-
-				case 'f':	//FIELD
-					break;
-				
-				default:
-					break;
-				}
 			}
 		}
-		else
-		{
-			for (unsigned int i = 0; i < sizeof(startMarker); i++)
-			{
-				if (rc == startMarker[i])
-				{
-					recvInProgress = true;
-					startPos = rc;
-					memset(receivedChars, 0, sizeof(receivedChars));
+		else {	//no data in string yet
+			for (unsigned int i = 0; i < sizeof(startMarker); i++) {
+				if (rc == startMarker[i]) {
+					receivedChars[serNum][0] = rc;
+					ndx[serNum]++;
 				}
 			}
 		}
 	}
 }
 
-// void piRecv() {
-// 	if (piSerial.available()) {
-// 		buf[cnt] = piSerial.read();
-// 		cnt++;
-// 		if (buf[cnt-1] == 'e') {	//terminated string
-// 			char *token;
-// 			int cnt2 = 0;
-// 			//Serial.print(buf); Serial.print("gg");
-// 			if(buf[0]=='B') {
-// 				//Serial.print(buf);
-// 				const char s[4] = " BP";
-// 				token = strtok(buf, s);	//get first token
-// 				/* walk through other tokens */
-// 				while( token != NULL ) {
-// 					ballPos[cnt2] = atoi(token);
-// 					token = strtok(NULL, s);
-// 					cnt2++;
-// 				}
-// 				//fix rotated 90 deg shit
-// 				ballAng = mod(ballAng-90,360);
-// 				predAng = mod(predAng-90,360);
-// 				lastBallTime = millis();
-// 				//Serial.println(robotAng);
-// 			}
-// 			else if(buf[0]=='b') {
-// 				const char s[4] = " by";
-// 				token = strtok(buf, s);	//get first token
-// 				/* walk through other tokens */
-// 				while( token != NULL ) {
-// 					goalPos[cnt2] = atoi(token);
-// 					//Serial.print(goalPos[cnt2]); Serial.print(";")
-// 					token = strtok(NULL, s);
-// 					cnt2++;
-// 				}
-// 				//Serial.print(mod(360-blueAng,360)); Serial.print(" "); Serial.println(mod(360-yellowAng,360));
-// 			}
-// 			memset(buf,0,sizeof(buf));
-// 			cnt=0;
-// 			//Serial.println();
-// 		}
-// 	}
-// }
+void processRecv(int serNum) {
+	byte* data = receivedChars[serNum] + 1;	//remove first char
+	//for sorting multi object serial strings
+	char *token;
+	int cnt = 0;
+	const char s[7] = " BPbyf"; //space,BALL,PREDICTED,bluegoal,yellowgoal,field
+
+	switch (receivedChars[serNum][0]) {
+		case 'L':	//light
+			processLight(data);
+			processLine();
+	#ifdef SERIAL_DEBUG
+			Serial.println("Light data received");
+	#endif
+			break;
+
+		case 'S':	//current sense
+			break;
+
+		case 'T':	//tof
+			token = strtok((char *)data, " T");	//get first token
+			/* walk through other tokens */
+			while( token != NULL ) {
+				tof[cnt] = atoi(token);
+				token = strtok(NULL, " T");
+				cnt++;
+			}
+			processTOF();
+			break;
+
+		case 'N':	//motorswitch
+			if (fast_atoi(data))
+			{
+				motorOn = true;
+#ifdef DEBUG
+				Serial.println("Motor switch on");
+#endif
+			}
+			else
+			{
+				motorOn = false;
+#ifdef DEBUG
+				Serial.println("Motor switch off");
+#endif
+			}
+
+			break;
+
+		case 'M':	//mouse
+			break;
+
+		case 'C':
+			readIMU(data);
+			break;
+
+		case 'X': //bluetooth data
+			/*  Internationals challenge 2 (passing)
+			if (data[0] == 'R') {
+				if (data[1] == '0') attackState = 0;	//sent from giver, giver in process of delivering ball
+				else if(data[1] == '1') attackState = 1;	//sent from giver, receiver should start approach ball
+				else if (data[1] == '2') attackState = 2; 	//sent from receiver, ball in receiver catchment, giver should turn off dribbler
+				else if (data[1] == '3') attackState = 3;	//sent from giver, giver turned off dribbler, receiver should turn on
+				else if (data[1] == '4') attackState = 4; 	//sent from receiver, giver can leave ball (ball in receiver possession)
+				Serial.println(attackState);
+			}
+			*/
+#ifdef whitebot
+			// char fuck[30];
+			// sprintf(fuck, "%s", (char*)data);
+			// Serial.print(fuck);Serial.println("bruh");
+			if(data[0] == 'Q'){ //other robot's ballDist and ballAng e.g. "XQ12 345|"
+				token = strtok((char *)data, " Q");  //get first token
+				/* walk through other tokens */
+				while( token != NULL ) {
+					otherBotData[cnt] = atoi(token);
+					token = strtok(NULL, " Q");
+					cnt++;
+				}
+				lastBTrecvTime = millis();
+				//Serial.print(otherBallAng); Serial.print(";");Serial.print(otherBallDist); Serial.println(";");
+				//Serial.print(otherOppGoalAng); Serial.print(";");Serial.print(otherOppGoalDist); Serial.println(" ");
+				//Serial.println(robotAng);
+			}
+#endif
+#ifdef blackbot
+			if(data[0] == 'R') {	//other robot wants switch role
+				if (data[1] == '0') attackState = 0;
+				else if (data[1] == '1') attackState = 1;
+				Serial.print("i become "); Serial.println(attackState);
+			}
+#endif
+		break;
+
+		case 'B':	//BALL + PREDICTED
+			token = strtok((char *)data, s);	//get first token
+			/* walk through other tokens */
+			while( token != NULL ) {
+				ballPos[cnt] = atoi(token);
+				token = strtok(NULL, s);
+				cnt++;
+			}
+			//fix rotated 90 deg shit
+			ballAng = mod(ballAng-90,360);
+			predAng = mod(predAng-90,360);
+			//  Serial.print(ballAng); Serial.print(";");
+			//  Serial.print(ballDist); Serial.println(";");
+			lastBallTime = millis();
+			newBallData = true;
+			break;
+
+		case 'P':	//PREDICTED only
+			break;
+
+		case 'b':	//BLUE + YELLOW
+			token = strtok((char *)data, s);	//get first token
+			/* walk through other tokens */
+			while( token != NULL ) {
+				goalPos[cnt] = atoi(token);
+				//Serial.print(goalPos[cnt2]); Serial.print(";")
+				token = strtok(NULL, s);
+				cnt++;
+			}
+			currGoalAng = mod(360-currGoalAng,360);
+			oppGoalAng = mod(360-oppGoalAng,360);
+			newGoalData = true;
+			//Serial.print(blueAng);Serial.print(" ");Serial.print(yellowAng);Serial.print(" ");Serial.print(blueDist);Serial.print(" ");Serial.print(yellowDist);Serial.print(" ");Serial.println(midAngleBetween(blueAng, yellowAng));
+			break;
+
+		case 'y':	//YELLOW only
+			break;
+
+		case 'f':	//FIELD
+			break;
+
+		default:
+			break;
+	}
+	memset(receivedChars[serNum],0,sizeof(receivedChars[serNum]));
+	ndx[serNum] = 0;
+}
+
+
 
 void serialWrite(HardwareSerial &_serial, byte type, byte *value)
 {
@@ -224,4 +211,12 @@ void serialWrite(HardwareSerial &_serial, char type)
 #ifdef DEBUG
 	Serial.println(type);
 #endif
+}
+
+void recvAll() {
+	recv(btSerial,0);
+	recv(L1Serial,1);
+	recv(piSerial,2);
+	recv(L3Serial,3);
+	recv(L4Serial,4);
 }

@@ -3,11 +3,26 @@ void processLight(byte *data)
 #ifdef SERIAL_DEBUG
 	Serial.println("Processing light data...");
 #endif
+	newLightData = true;
+
+	//checking light gates here
+	frontGate = !(data[4] >> 6 & 0x01);	//pass data through NOT since it sends true when over threshold
+	backGate = !(data[4] >> 7 & 0x01);
+	if (frontGate) {
+	  lastFrontTime = millis();
+		if (!prevFrontGate) {
+		firstFrontTime = millis();  //if first time frontgate activated, start timer
+		//Serial.println(firstFrontTime);
+		}
+	}
+  	prevFrontGate = frontGate;
+	if (backGate) backTimer = millis();
+
 	int numDetected = 0;
 	for (int i = 0; i < 36; i++)	//NOT checking side 2 light and lightgate here
 	{
 		bool detected = (data[i / 8] >> (i % 8) & 0x01);	//parse data to see which index is activated
-		Serial.print(detected);
+		//Serial.print(detected);
 		if (detected)
 		{
 			line[numDetected] = i;
@@ -18,18 +33,28 @@ void processLight(byte *data)
 #endif
 		}
 	}
-	Serial.println("lmao");
+
+	// //extra side sensors
+	// if ((data[4] >> 4 & 0x01) && numDetected==0) {
+	// 	line[0] = 9;
+	// 	numDetected = 1;
+	// }
+	// else if ((data[4] >> 5 & 0x01) && numDetected==0) {
+	// 	line[0] = 27;
+	// 	numDetected = 1;
+	// }
+	
+	//Serial.println("lmao");
 	// lineAng: angle of normal from line to centre of robot, taking shorter normal's angle
 	// lineLen: relative length of longest chord between detected clusters, i.e. diameter=1
-	/*if (numDetected==0) {	//no light detected
-		//if (millis() - lastLineTime > 1000) {
+	if (numDetected==0) {	//no light detected
+		if (millis() - lastOutTime > 30) {	//must be off line for 30 ms to prevent false negative
 			lineAng = -1;
 			lineLen = -1;
 			prevLine = onLine;
+			lastInTime = millis();
 			if(onLine) onLine = false;
-		//} else {
-		//	Serial.print(lastLineTime);Serial.print(" ");Serial.print(millis());Serial.print(" ");Serial.println(onLine);
-		//}
+		}
 		return;
 	}
 	else if (numDetected==1) {	//1 light detected
@@ -38,7 +63,7 @@ void processLight(byte *data)
 	}
 	else {	//2 or more light detected
 		float ang=0, tempAng=0;
-		int clusterStart=-1, clusterEnd=-1;
+		clusterStart=-1, clusterEnd=-1;
 		for(int i=0; i<numDetected-1; i++) {  //find longest chord
 			for(int j=1; j<numDetected; j++) {
 				tempAng = smallestAngleBetween(line[i]*10,line[j]*10);
@@ -50,12 +75,13 @@ void processLight(byte *data)
 			}
 		}
 		lineAng = angleBetween(clusterStart, clusterEnd) <= 180 ? midAngleBetween(clusterStart, clusterEnd) : midAngleBetween(clusterEnd, clusterStart);
-    	lineLen = smallestAngleBetween(clusterStart,clusterEnd)/180;
+    lineLen = smallestAngleBetween(clusterStart,clusterEnd)/180;
 	}
 	prevLine = onLine;
-	lastLineTime = millis();
+	prevLastOutTime = lastOutTime;
+	lastOutTime = millis();
 	if(!onLine) onLine = true;
-	*/
+	
 #ifdef SERIAL_DEBUG
 	Serial.println("");
 #endif
@@ -89,19 +115,30 @@ void processLine() {
 }
 
 void lineAvoid() {
+	float tofAng = processTOFout();	//returns angle to move back into field
+	
 	if(onLine) {
-		if(lineLen > 0.6) {	//changing this value changes when robot starts rebounding (refer to processLine)
-			if(lineLen==3) angular_drive(robotSpeed,mod((lineAng+180),360),0);
-			else {
-				angular_drive(2.0*lineLen*robotSpeed,mod((lineAng+180),360),0);
-				Serial.print(2.0*lineLen*robotSpeed);
+		if (tofAng >= 0) {
+			angular_drive(1200,tofAng,cmpCorrection,300);
+			//Serial.print("tof");Serial.println(tofAng);
+		}
+		else {
+			if(lineLen > 0.5) {	//changing this value changes when robot starts rebounding (refer to processLine)
+				if(lineLen==3) angular_drive(2.0*robotSpeed,mod(lineAng+180,360),cmpCorrection,100);
+				else {
+					angular_drive(1.0*lineLen*robotSpeed,mod(lineAng+180,360),cmpCorrection,300);
+					//Serial.print(1.5*lineLen*robotSpeed);
+				}
 			}
-			Serial.print(" ");
-			Serial.println(mod((lineAng+180),360));
-		} 
+			//Serial.print("line");Serial.println(mod(lineAng+180,360));
+		}
 		// else if(lineLen > 1.0 && isOutsideLine(ballAng)) {
 		// 	//angular_drive(0,0,0);
 		// }
+	} else if(millis()-lastOutTime < 200 && tofAng>=0) {	//time off line less than 0.2s, continue rejecting line based on tof for safety
+		//angular_drive(900,tofAng,cmpCorrection,300);
+		//Serial.print("toffffuck");
+		//Serial.println(tofAng);
 	}
 }
 
@@ -120,31 +157,31 @@ bool recvCalib()
 				;
 			else if (rc == separator2 && i)
 			{
-				receivedChars[ndx] = '\0'; // terminate the string
+				receivedChars[1][ndx] = '\0'; // terminate the string
 				Serial.print("No. ");
 				Serial.print(i);
 				Serial.print("\tThres:");
-				Serial.println(fast_atoi(receivedChars));
-				memset(receivedChars, 0, sizeof(receivedChars));
+				Serial.println(fast_atoi(receivedChars[1]));
+				memset(receivedChars[1], 0, sizeof(receivedChars[1]));
 				ndx = 0;
 			}
 			else if (rc == separator)
 			{
-				receivedChars[ndx] = '\0'; // terminate the string
-				if (fast_atoi(receivedChars) - i > 1 && fast_atoi(receivedChars) != 1)
+				receivedChars[1][ndx] = '\0'; // terminate the string
+				if (fast_atoi(receivedChars[1]) - i > 1 && fast_atoi(receivedChars[1]) != 1)
 					Serial.println("Missed data during LS calibration");
-				i = fast_atoi(receivedChars);
-				memset(receivedChars, 0, sizeof(receivedChars));
+				i = fast_atoi(receivedChars[1]);
+				memset(receivedChars[1], 0, sizeof(receivedChars[1]));
 				ndx = 0;
 			}
 			else if (rc == endMarker)
 			{
-				receivedChars[ndx] = '\0'; // terminate the string
+				receivedChars[1][ndx] = '\0'; // terminate the string
 				Serial.print("No. ");
 				Serial.print(i);
 				Serial.print("\tThres:");
-				Serial.println(fast_atoi(receivedChars));
-				memset(receivedChars, 0, sizeof(receivedChars));
+				Serial.println(fast_atoi(receivedChars[1]));
+				memset(receivedChars[1], 0, sizeof(receivedChars[1]));
 				ndx = 0;
 				i = 0;
 				recvInProgress = false;
@@ -152,12 +189,12 @@ bool recvCalib()
 			}
 			else
 			{
-				receivedChars[ndx] = rc;
+				receivedChars[1][ndx] = rc;
 				ndx++;
-				if (ndx >= sizeof(receivedChars))
+				if (ndx >= sizeof(receivedChars[1]))
 				{
 					Serial.println("Too many chars!");
-					ndx = sizeof(receivedChars) - 1;
+					ndx = sizeof(receivedChars[1]) - 1;
 				}
 			}
 		}
@@ -165,4 +202,23 @@ bool recvCalib()
 			recvInProgress = true;
 	}
 	return false;
+}
+
+void lineTrack() {
+	if (onLine) {
+		float angle, angleDeviation, dist;
+		if (smallestAngleBetween(clusterStart,ballAng) < smallestAngleBetween(clusterEnd,ballAng)) {
+			angle = clusterStart;
+			angleDeviation = abs(90-smallestAngleBetween(clusterStart,ballAng));
+		}
+		else {
+			angle = clusterEnd;
+			angleDeviation = abs(90-smallestAngleBetween(clusterEnd,ballAng));
+		}
+		dist = lineLen > 1 ? lineLen-1 : 1-lineLen;
+		//Serial.print(angle); Serial.print(" "); Serial.println(min(1100,450*sqrt(angleDeviation/2))+dist*200.0);
+		angular_drive(min(900,450*sqrt(angleDeviation/2))+dist*100.0,angle,cmpCorrection,300);
+	} else {
+		angular_drive(0,0,cmpCorrection,300);
+	}
 }
